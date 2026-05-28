@@ -35,9 +35,10 @@
   .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px;letter-spacing:.02em}
   .logo .mark{width:30px;height:30px;border-radius:9px;background:var(--green);display:grid;place-items:center;color:#fff;font-size:15px}
   .logo small{display:block;font-size:11px;font-weight:600;color:var(--muted);letter-spacing:.06em}
+  header .logo small{display:inline-block;margin-left:10px;vertical-align:baseline}
   .nav-cta{background:var(--green);color:#fff;padding:11px 22px;border-radius:999px;font-weight:700;font-size:14px;box-shadow:0 6px 16px rgba(6,199,85,.35);transition:.2s}
   .nav-cta:hover{background:var(--green-d);transform:translateY(-1px)}
-  @media(max-width:560px){.nav-cta{padding:9px 16px;font-size:13px}.logo{font-size:16px}}
+  @media(max-width:560px){.nav-cta{padding:9px 16px;font-size:13px}.logo{font-size:16px}header .logo small{display:none}}
 
   /* ---------- hero ---------- */
   .hero{position:relative;background:radial-gradient(120% 120% at 80% 0%,#19376D 0%,var(--navy) 55%,#081222 100%);color:#fff;overflow:hidden;padding:84px 0 96px}
