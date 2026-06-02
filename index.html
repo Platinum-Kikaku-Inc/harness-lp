@@ -21,7 +21,7 @@
     --line-d:#C7C0AE;
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth;overflow-x:clip}
+  html{scroll-behavior:smooth;overflow-x:clip;-webkit-text-size-adjust:100%;text-size-adjust:100%}
   body{
     font-family:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN",sans-serif;
     color:var(--ink);background:var(--paper);line-height:1.95;
@@ -114,7 +114,9 @@
   /* ---------- LINE Harness edge（運用費ゼロ／専用カスタマイズ） ---------- */
   .edge{background:var(--paper2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:84px 0 88px}
   .edge .eyebrow{margin-bottom:14px}
-  .edge .h2 b{color:var(--accent);font-weight:800}
+  .edge .h2 b{color:var(--accent);font-weight:800;white-space:nowrap}
+  /* スマホ：見出しを自由に折り返し可能にし、はみ出しを完全防止（LINE Harnessは結合維持） */
+  @media(max-width:680px){.edge .h2{word-break:normal;overflow-wrap:anywhere;line-height:1.45}}
   .edge-grid{display:grid;grid-template-columns:1fr 1fr;margin-top:48px;border:1px solid var(--line-d);background:var(--paper)}
   @media(max-width:780px){.edge-grid{grid-template-columns:1fr}}
   .ec{padding:42px 42px 46px;border-right:1px solid var(--line-d);position:relative}
