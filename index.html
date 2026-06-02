@@ -3,203 +3,315 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LINE Harness 構築・導入支援｜実績紹介</title>
+<title>LINE Harness 構築・導入支援｜株式会社プラチナ企画</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&display=swap" rel="stylesheet">
 <style>
   :root{
-    --green:#06C755;
-    --green-d:#05A847;
-    --navy:#0B1B33;
-    --navy-2:#13294B;
-    --ink:#1A2233;
-    --muted:#5B6B82;
-    --line:#E4E9F0;
-    --bg:#F5F7FA;
-    --gold:#E8B007;
-    --radius:18px;
-    --shadow:0 10px 40px rgba(11,27,51,.10);
-    --shadow-sm:0 4px 18px rgba(11,27,51,.08);
+    --paper:#FAF8F3;
+    --paper2:#F1EDE2;
+    --ink:#1B2620;
+    --ink-soft:#3A453E;
+    --green:#1C3A2E;
+    --green-d:#142A21;
+    --accent:#2BA84A;
+    --muted:#727A70;
+    --line:#D9D3C4;
+    --line-d:#C7C0AE;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
   body{
-    font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-    color:var(--ink);background:#fff;line-height:1.8;-webkit-font-smoothing:antialiased;
+    font-family:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN",sans-serif;
+    color:var(--ink);background:var(--paper);line-height:1.95;
+    -webkit-font-smoothing:antialiased;font-weight:500;
+    font-feature-settings:"palt";
   }
   a{color:inherit;text-decoration:none}
-  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
-  .accent{color:var(--green)}
-  .ph{display:inline-block;white-space:nowrap}
+  img{display:block;max-width:100%}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+  .mincho{font-family:"Shippori Mincho",serif;}
+  .serif{font-family:"Fraunces",serif;}
+  .accent{color:var(--accent)}
+
+  /* eyebrow */
+  .eyebrow{font-family:"Fraunces",serif;font-style:italic;font-size:15px;color:var(--accent);letter-spacing:.04em;display:inline-block;margin-bottom:18px}
+  .eyebrow::before{content:"";display:inline-block;width:26px;height:1px;background:var(--accent);vertical-align:middle;margin-right:10px;margin-bottom:4px}
 
   /* ---------- header ---------- */
-  header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-  .nav{display:flex;align-items:center;justify-content:space-between;height:66px}
-  .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px;letter-spacing:.02em}
-  .logo .mark{width:30px;height:30px;border-radius:9px;background:var(--green);display:grid;place-items:center;color:#fff;font-size:15px}
-  .logo small{display:block;font-size:11px;font-weight:600;color:var(--muted);letter-spacing:.06em}
-  header .logo small{display:inline-block;margin-left:10px;vertical-align:baseline}
-  .nav-cta{background:var(--green);color:#fff;padding:11px 22px;border-radius:999px;font-weight:700;font-size:14px;box-shadow:0 6px 16px rgba(6,199,85,.35);transition:.2s}
-  .nav-cta:hover{background:var(--green-d);transform:translateY(-1px)}
-  @media(max-width:560px){.nav-cta{padding:9px 16px;font-size:13px}.logo{font-size:16px}header .logo small{display:none}}
+  header{position:sticky;top:0;z-index:50;background:rgba(250,248,243,.86);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:70px}
+  .brand{display:flex;flex-direction:column;line-height:1.25}
+  .brand b{font-family:"Shippori Mincho",serif;font-weight:700;font-size:18px;letter-spacing:.04em;color:var(--green)}
+  .brand small{font-family:"Fraunces",serif;font-size:11.5px;letter-spacing:.16em;color:var(--muted);text-transform:uppercase}
+  .nav-cta{border:1px solid var(--green);color:var(--green);padding:10px 22px;font-weight:700;font-size:13.5px;letter-spacing:.04em;transition:.2s}
+  .nav-cta:hover{background:var(--green);color:var(--paper)}
+  @media(max-width:560px){.nav-cta{padding:8px 14px;font-size:12.5px}.brand b{font-size:16px}}
 
   /* ---------- hero ---------- */
-  .hero{position:relative;background:radial-gradient(120% 120% at 80% 0%,#19376D 0%,var(--navy) 55%,#081222 100%);color:#fff;overflow:hidden;padding:84px 0 96px}
-  .hero::after{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;background:radial-gradient(circle,rgba(6,199,85,.35),transparent 65%);filter:blur(10px)}
-  .hero .wrap{position:relative;z-index:2}
-  .badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.22);color:#dbe7ff;padding:7px 16px;border-radius:999px;font-size:13px;font-weight:600;margin-bottom:26px}
-  .badge .dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px rgba(6,199,85,.25)}
-  .hero h1{font-size:clamp(28px,5vw,52px);line-height:1.4;font-weight:900;letter-spacing:.01em}
-  .hero h1 .hl{position:relative;color:#fff;background:linear-gradient(transparent 62%,rgba(6,199,85,.55) 62%)}
-  .hero p.lead{margin-top:24px;font-size:clamp(15px,2.2vw,19px);color:#c7d4e8;max-width:760px}
-  .hero .btns{margin-top:38px;display:flex;gap:16px;flex-wrap:wrap}
-  .btn-main{background:var(--green);color:#fff;padding:17px 38px;border-radius:999px;font-weight:800;font-size:17px;box-shadow:0 12px 30px rgba(6,199,85,.4);transition:.2s}
-  .btn-main:hover{background:var(--green-d);transform:translateY(-2px)}
-  .btn-ghost{border:1.5px solid rgba(255,255,255,.4);color:#fff;padding:17px 30px;border-radius:999px;font-weight:700;font-size:16px;transition:.2s}
-  .btn-ghost:hover{background:rgba(255,255,255,.1)}
+  .hero{padding:78px 0 70px;border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+  .hero-inner{max-width:none;position:relative;z-index:2}
+  .hero-deco{position:absolute;top:52%;right:max(8px,calc((100vw - 1120px)/2 + 4px));transform:translateY(-50%);width:430px;z-index:1;pointer-events:auto}
+  .hero-deco svg{width:100%;height:auto;display:block}
+  @media(max-width:1160px){.hero-deco{display:none}}
+  /* blueprint animation */
+  @keyframes bpflow{to{stroke-dashoffset:-18}}
+  @keyframes bpflowrev{to{stroke-dashoffset:18}}
+  @keyframes bppulse{0%{opacity:.5;transform:scale(.88)}70%{opacity:0;transform:scale(1.16)}100%{opacity:0;transform:scale(1.16)}}
+  @keyframes bpspin{to{transform:rotate(360deg)}}
+  .hero-deco .flow{stroke-dasharray:5 4;animation:bpflow 1s linear infinite}
+  .hero-deco .flow-rev{stroke-dasharray:5 4;animation:bpflowrev 1.7s linear infinite}
+  .hero-deco .pulse{transform-box:fill-box;transform-origin:center;animation:bppulse 2.6s ease-out infinite}
+  .hero-deco .spin{transform-box:fill-box;transform-origin:center;animation:bpspin 5.5s linear infinite}
+  @keyframes bpbar{0%,100%{transform:scaleY(.2)}50%{transform:scaleY(1)}}
+  .hero-deco .kbar{transform-box:fill-box;transform-origin:bottom center;animation:bpbar 2.8s ease-in-out infinite}
+  @keyframes bpdash{to{stroke-dashoffset:-32}}
+  .hero-deco .flow-s{stroke-dasharray:4 3;animation:bpdash 1.3s linear infinite}
+  @keyframes bpblink{0%,100%{opacity:1}50%{opacity:.2}}
+  .hero-deco .blink{animation:bpblink 1.6s ease-in-out infinite}
+  /* ---------- AI stack marquee ---------- */
+  .aistack{background:var(--green);color:var(--paper);padding:62px 0 66px;border-top:1px solid var(--line);overflow:hidden}
+  .aistack .eyebrow{color:#7fd092}.aistack .eyebrow::before{background:#7fd092}
+  .ai-lead{font-family:"Shippori Mincho",serif;font-weight:600;font-size:clamp(18px,2.05vw,23px);line-height:1.75;color:var(--paper);max-width:820px;letter-spacing:.01em}
+  .ai-lead b{color:#8fd6a1;font-weight:700}
+  .marquee{margin-top:42px;width:100%;-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
+  .track{display:flex;gap:14px;width:max-content;animation:scrollx 48s linear infinite}
+  .marquee:hover .track{animation-play-state:paused}
+  @keyframes scrollx{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
+  .ai-item{display:inline-flex;align-items:center;gap:11px;padding:13px 21px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.04);white-space:nowrap;flex:none}
+  .ai-item svg{width:23px;height:23px;display:block;color:#e9efe9;flex:none}
+  .ai-item span{font-family:"Fraunces",serif;font-size:14.5px;letter-spacing:.01em;color:#d6e0d8}
+  @media(max-width:680px){.aistack{padding:48px 0 50px}.ai-item{padding:11px 16px}.marquee{margin-top:30px}}
+  @media(prefers-reduced-motion:reduce){.track,.hero-deco .flow,.hero-deco .flow-rev,.hero-deco .flow-s,.hero-deco .pulse,.hero-deco .spin,.hero-deco .kbar,.hero-deco .blink,.hero-deco .scan{animation:none}.hero-deco .scan{display:none}}
+  .hero h1{font-family:"Shippori Mincho",serif;font-weight:800;font-size:clamp(26px,4.15vw,45px);line-height:1.45;letter-spacing:-.01em;color:var(--green);word-break:keep-all;text-wrap:pretty}
+  @media(max-width:900px){.hero h1{font-size:clamp(25px,5.4vw,34px)}}
+  @media(min-width:1161px){.hero h1,.hero .meta,.hero .btns{max-width:560px}}
+  .hero h1 .u{background:linear-gradient(transparent 66%,rgba(43,168,74,.30) 66%);padding:0 .04em}
+  .hero h1 .sm{font-size:.62em}
+  .hero h1 .hl{font-family:"Fraunces",serif;font-weight:600;font-style:italic;color:var(--accent);letter-spacing:.005em;padding:0 .02em}
+  /* hero badge（LINE Harness の強調ロックアップ） */
+  .hero-badge{display:inline-flex;align-items:stretch;margin-bottom:22px;border:1px solid var(--line-d);background:var(--paper);max-width:100%;flex-wrap:wrap}
+  .hero-badge .hb-mark{font-family:"Fraunces",serif;font-weight:600;font-size:16px;letter-spacing:.02em;color:var(--paper);background:var(--green);padding:9px 17px;display:inline-flex;align-items:center;gap:9px}
+  .hero-badge .hb-mark::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 0 rgba(43,168,74,.55);animation:hblive 2.2s ease-out infinite}
+  @keyframes hblive{0%{box-shadow:0 0 0 0 rgba(43,168,74,.55)}70%{box-shadow:0 0 0 8px rgba(43,168,74,0)}100%{box-shadow:0 0 0 0 rgba(43,168,74,0)}}
+  .hero-badge .hb-tag{font-size:13px;color:var(--ink-soft);padding:9px 16px;display:inline-flex;align-items:center;letter-spacing:.02em}
+  @media(prefers-reduced-motion:reduce){.hero-badge .hb-mark::before{animation:none}}
+  @media(max-width:560px){.hero-badge .hb-mark{font-size:13.5px;padding:8px 13px}.hero-badge .hb-tag{font-size:12px;padding:8px 13px}}
+  .hero p.lead{margin-top:28px;font-size:16.5px;color:var(--ink-soft);max-width:520px;line-height:1.95}
+  .hero p.lead b{font-weight:700;color:var(--green)}
+  .hero .meta{margin-top:30px;display:flex;gap:26px;flex-wrap:wrap;padding-top:24px;border-top:1px solid var(--line)}
+  .hero .meta div{line-height:1.3}
+  .hero .meta .n{font-family:"Fraunces",serif;font-size:27px;color:var(--green);font-weight:600}
+  .hero .meta .n span{font-size:.55em;color:var(--accent)}
+  .hero .meta .c{font-size:13px;color:var(--muted);letter-spacing:.02em}
+  .hero .btns{margin-top:34px;display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+  .btn{background:var(--green);color:var(--paper);padding:16px 34px;font-weight:700;font-size:15px;letter-spacing:.03em;transition:.2s;border:1px solid var(--green)}
+  .btn:hover{background:var(--green-d);transform:translateY(-1px)}
+  .link-arrow{font-weight:700;font-size:14.5px;color:var(--green);border-bottom:1px solid var(--line-d);padding-bottom:3px;transition:.2s}
+  .link-arrow:hover{border-color:var(--accent);color:var(--accent)}
 
-  /* ---------- trust bar ---------- */
-  .trust{background:var(--navy-2);padding:30px 0}
-  .trust .wrap{display:flex;flex-direction:column;align-items:center;gap:20px}
-  .trust .label{font-size:12px;letter-spacing:.16em;color:#7c93b5;font-weight:800}
-  .trust .logos{display:flex;align-items:center;gap:22px 42px;flex-wrap:wrap;justify-content:center}
-  .trust .lg{height:38px;width:auto;max-width:155px;object-fit:contain;opacity:.95;transition:.2s}
-  .trust .lg:hover{opacity:1}
-  .trust .ctext{display:flex;flex-direction:column;align-items:center;line-height:1.25;color:#e6edf7;font-weight:800;font-size:15px}
-  .trust .ctext small{font-size:10px;color:#7c93b5;font-weight:600;margin-top:3px;letter-spacing:.04em}
-  .trust .brandlock{display:flex;align-items:center;gap:11px;color:#fff;font-weight:800;font-size:17px;letter-spacing:.02em;opacity:.9}
-  .trust .brandlock .emblem{height:40px;width:40px;border-radius:9px;object-fit:cover}
+  /* ---------- LINE Harness edge（運用費ゼロ／専用カスタマイズ） ---------- */
+  .edge{background:var(--paper2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:84px 0 88px}
+  .edge .eyebrow{margin-bottom:14px}
+  .edge .h2 b{color:var(--accent);font-weight:800}
+  .edge-grid{display:grid;grid-template-columns:1fr 1fr;margin-top:48px;border:1px solid var(--line-d);background:var(--paper)}
+  @media(max-width:780px){.edge-grid{grid-template-columns:1fr}}
+  .ec{padding:42px 42px 46px;border-right:1px solid var(--line-d);position:relative}
+  .ec:last-child{border-right:none}
+  @media(max-width:780px){.ec{border-right:none;border-bottom:1px solid var(--line-d);padding:34px 28px 38px}.ec:last-child{border-bottom:none}}
+  .ec .ec-no{font-family:"Fraunces",serif;font-style:italic;font-size:15px;color:var(--accent);letter-spacing:.1em;margin-bottom:16px}
+  .ec h3{font-family:"Shippori Mincho",serif;font-weight:800;font-size:26px;color:var(--green);line-height:1.45;margin-bottom:15px;word-break:keep-all;text-wrap:pretty}
+  .ec h3 .em{color:var(--accent)}
+  .ec p{font-size:15px;color:var(--ink-soft);line-height:1.95}
+  .ec .tagrow{margin-top:22px;display:flex;flex-wrap:wrap;gap:7px}
+  .ec .tagrow span{font-size:12.5px;color:var(--green);border:1px solid var(--line-d);padding:5px 12px}
 
   /* ---------- section base ---------- */
-  section.block{padding:92px 0}
-  .eyebrow{display:inline-block;color:var(--green);font-weight:800;font-size:13px;letter-spacing:.16em;margin-bottom:14px}
-  .h2{font-size:clamp(24px,3.6vw,36px);font-weight:900;line-height:1.4;letter-spacing:.01em}
-  .sub{color:var(--muted);margin-top:14px;font-size:16px;max-width:680px}
-  .center{text-align:center}
-  .center .sub{margin-left:auto;margin-right:auto}
+  section{padding:96px 0}
+  .lead-row{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:end}
+  @media(max-width:780px){.lead-row{grid-template-columns:1fr;gap:14px;align-items:start}}
+  .h2{font-family:"Shippori Mincho",serif;font-weight:800;font-size:clamp(24px,3.15vw,36px);line-height:1.5;color:var(--green);letter-spacing:.01em;word-break:keep-all;text-wrap:pretty}
+  .deck{color:var(--ink-soft);font-size:15.5px;line-height:1.95;max-width:520px}
 
-  /* ---------- value cards ---------- */
-  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:50px}
-  @media(max-width:820px){.grid3{grid-template-columns:1fr}}
-  .vcard{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:34px 28px;box-shadow:var(--shadow-sm);transition:.25s}
-  .vcard:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:#cfe9d8}
-  .vcard .num{font-size:13px;font-weight:800;color:var(--green);letter-spacing:.1em}
-  .vcard .ic{width:56px;height:56px;border-radius:15px;background:linear-gradient(135deg,#06C755,#0aa04a);display:grid;place-items:center;font-size:26px;margin:14px 0 18px}
-  .vcard h3{font-size:20px;font-weight:800;margin-bottom:10px}
-  .vcard p{color:var(--muted);font-size:15px}
+  /* ---------- partnership ---------- */
+  .partner{background:var(--green);color:var(--paper)}
+  .partner .eyebrow{color:#7fd092}.partner .eyebrow::before{background:#7fd092}
+  .partner .h2{color:var(--paper)}
+  .partner .deck{color:#cfdcd2}
+  .pmark{font-family:"Fraunces",serif;font-style:italic;color:#8fd6a1;font-size:15px}
+  .duo{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:54px}
+  @media(max-width:780px){.duo{grid-template-columns:1fr;gap:22px}}
+  .pcard{border:1px solid rgba(255,255,255,.16);padding:30px;display:flex;gap:22px;align-items:flex-start}
+  .pcard.flip{background:rgba(255,255,255,.05)}
+  .pcard img{width:104px;height:128px;object-fit:cover;flex:none;border:1px solid rgba(255,255,255,.18);object-position:50% 26%}
+  .pcard .role{font-family:"Fraunces",serif;font-size:11.5px;letter-spacing:.18em;color:#8fd6a1;text-transform:uppercase}
+  .pcard h3{font-family:"Shippori Mincho",serif;font-weight:700;font-size:21px;margin:7px 0 2px}
+  .pcard .sub{font-size:13px;color:#aebdb2;margin-bottom:12px;letter-spacing:.02em}
+  .pcard p{font-size:14px;color:#cbd6cc;line-height:1.85}
+
+  /* ---------- what we do (rows) ---------- */
+  .do-row{display:grid;grid-template-columns:96px 1fr 1.1fr;gap:34px;align-items:baseline;padding:38px 0;border-top:1px solid var(--line)}
+  .do-row:last-child{border-bottom:1px solid var(--line)}
+  .do-row .no{font-family:"Fraunces",serif;font-size:46px;color:var(--line-d);font-weight:400;line-height:1}
+  .do-row h3{font-family:"Shippori Mincho",serif;font-weight:700;font-size:22px;color:var(--green);line-height:1.5;word-break:keep-all}
+  .do-row p{color:var(--ink-soft);font-size:15.5px;line-height:1.95}
+  .do-wrap{margin-top:46px}
+  @media(max-width:780px){.do-row{grid-template-columns:60px 1fr;gap:18px}.do-row p{grid-column:1/3;margin-top:8px}.do-row .no{font-size:34px}}
 
   /* ---------- results ---------- */
-  .results{background:var(--bg)}
-  .stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:48px}
-  @media(max-width:820px){.stat-row{grid-template-columns:repeat(2,1fr)}}
-  .stat{background:#fff;border-radius:16px;padding:26px 18px;text-align:center;box-shadow:var(--shadow-sm);border:1px solid var(--line)}
-  .stat .big{font-size:clamp(30px,5vw,44px);font-weight:900;color:var(--navy);line-height:1}
-  .stat .big span{color:var(--green);font-size:.62em;margin-left:2px}
-  .stat .cap{margin-top:10px;font-size:13px;color:var(--muted);font-weight:600}
+  .results{background:var(--paper2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .statline{display:grid;grid-template-columns:repeat(3,1fr);margin-top:50px;border:1px solid var(--line-d)}
+  @media(max-width:680px){.statline{grid-template-columns:1fr}}
+  .statline .s{padding:30px 28px;border-right:1px solid var(--line-d)}
+  .statline .s:last-child{border-right:none}
+  @media(max-width:680px){.statline .s{border-right:none;border-bottom:1px solid var(--line-d)}.statline .s:last-child{border-bottom:none}}
+  .statline .v{font-family:"Fraunces",serif;font-size:clamp(34px,5vw,48px);color:var(--green);font-weight:600;line-height:1}
+  .statline .v span{color:var(--accent);font-size:.5em;margin-left:3px}
+  .statline .c{margin-top:10px;font-size:13.5px;color:var(--muted)}
 
-  .case-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:30px}
-  @media(max-width:820px){.case-grid{grid-template-columns:1fr}}
-  .case{background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--line)}
-  .case .top{padding:26px 28px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
-  .case .top .caselogo{width:42px;height:42px;border-radius:10px;object-fit:cover;flex:none}
-  .case .top .caseicon{width:42px;height:42px;border-radius:10px;flex:none;display:grid;place-items:center;font-size:22px;background:var(--navy)}
-  .case .tag{font-size:12px;font-weight:800;color:#fff;background:var(--navy);padding:5px 12px;border-radius:999px}
-  .case .tag.green{background:var(--green)}
-  .case .top h3{font-size:19px;font-weight:900}
-  .case .body{padding:24px 28px}
-  .kpis{display:flex;gap:24px;flex-wrap:wrap;margin-bottom:18px}
-  .kpi .v{font-size:30px;font-weight:900;color:var(--green);line-height:1}
-  .kpi .l{font-size:12px;color:var(--muted);font-weight:600;margin-top:4px}
-  .case .body ul{list-style:none;display:flex;flex-wrap:wrap;gap:8px}
-  .case .body ul li{font-size:12.5px;font-weight:600;color:#3a4a63;background:#eef4ff;padding:6px 11px;border-radius:8px}
+  .cases{display:grid;grid-template-columns:1.25fr .75fr;gap:30px;margin-top:34px}
+  @media(max-width:820px){.cases{grid-template-columns:1fr}}
+  .case{border:1px solid var(--line-d);background:var(--paper);padding:34px 32px}
+  .case .tag{font-family:"Fraunces",serif;font-size:12px;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+  .case h3{font-family:"Shippori Mincho",serif;font-weight:700;font-size:23px;color:var(--green);margin:8px 0 18px}
+  .case .figrow{display:flex;gap:14px;align-items:center;margin-bottom:18px}
+  .case .figrow img{width:54px;height:54px;object-fit:cover;border:1px solid var(--line-d);flex:none}
+  .case .kpis{display:flex;gap:30px;flex-wrap:wrap;padding:18px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:16px}
+  .case .kpi .v{font-family:"Fraunces",serif;font-size:30px;color:var(--green);font-weight:600;line-height:1}
+  .case .kpi .l{font-size:13px;color:var(--muted);margin-top:5px}
+  .case p{font-size:14.5px;color:var(--ink-soft);line-height:1.9}
+  .case .chips{margin-top:16px;display:flex;flex-wrap:wrap;gap:7px}
+  .case .chips span{font-size:12.5px;color:var(--green);border:1px solid var(--line-d);padding:4px 10px}
+  /* 棲み分け：種別ラベル */
+  .case .cat{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--muted);margin:-8px 0 18px}
+  .case .cat b{font-family:"Shippori Mincho",serif;font-weight:700;color:var(--green);font-size:13.5px}
+  .case .cat .dot{width:5px;height:5px;border-radius:50%;background:var(--accent);flex:none}
+  /* 棲み分け①：全国・オンライン教育 ＝ ダークのフラッグシップ */
+  .case--feature{background:var(--green);border-color:var(--green);position:relative}
+  .case--feature::before{content:"";position:absolute;left:0;top:0;width:4px;height:100%;background:var(--accent)}
+  .case--feature .tag{color:#8fd6a1}
+  .case--feature h3{color:var(--paper)}
+  .case--feature .cat{color:#9fb3a4}
+  .case--feature .cat b{color:#fff}
+  .case--feature .kpis{border-color:rgba(255,255,255,.18)}
+  .case--feature .kpi .v{color:#fff}
+  .case--feature .kpi .l{color:#a3b4a7}
+  .case--feature p{color:#cdd9cf}
+  .case--feature .chips span{color:#bfe6c9;border-color:rgba(255,255,255,.24)}
+  .case--feature .scale{position:absolute;right:28px;top:30px;font-family:"Fraunces",serif;font-style:italic;font-size:12px;letter-spacing:.06em;color:#7fd092;border:1px solid rgba(127,208,146,.4);padding:3px 11px;border-radius:20px}
+  /* 棲み分け②：地域・リアル店舗 ＝ ライトのローカル実績 */
+  .case--local{background:var(--paper);border-color:var(--line-d);position:relative}
+  .case--local::before{content:"";position:absolute;left:0;top:0;width:4px;height:100%;background:var(--line-d)}
+  .case--local .figrow img{width:46px;height:46px;border-radius:50%}
+  .case--local .scale{position:absolute;right:28px;top:30px;font-family:"Fraunces",serif;font-style:italic;font-size:12px;letter-spacing:.06em;color:var(--muted);border:1px solid var(--line-d);padding:3px 11px;border-radius:20px}
 
-  .oa{margin-top:26px;background:linear-gradient(135deg,#1a1a1a,#2b2b2b);color:#fff;border-radius:var(--radius);padding:28px 30px;display:flex;align-items:center;gap:22px;flex-wrap:wrap}
-  .oa .pill{font-size:12px;font-weight:800;letter-spacing:.06em;color:#101010;background:var(--gold);padding:6px 14px;border-radius:999px}
-  .oa h4{font-size:18px;font-weight:800}
-  .oa p{color:#cfcfcf;font-size:14px;margin-top:4px}
-  .oa .stores{display:flex;gap:10px;flex-wrap:wrap;margin-left:auto}
-  .oa .stores span{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);padding:8px 14px;border-radius:10px;font-weight:700;font-size:14px}
+  .oa{margin-top:32px;border:1px solid var(--green);padding:30px 34px;display:flex;align-items:center;gap:24px;flex-wrap:wrap;background:var(--green);color:var(--paper);position:relative;overflow:hidden}
+  .oa::after{content:"";position:absolute;right:-40px;top:-40px;width:180px;height:180px;border:1px solid rgba(255,255,255,.08);border-radius:50%}
+  .oa .ytic{flex:none;width:58px;height:42px;background:#ff0033;border-radius:11px;display:grid;place-items:center;box-shadow:0 0 0 5px rgba(255,255,255,.07)}
+  .oa .ytic svg{width:22px;height:22px;display:block}
+  .oa .otxt{position:relative;z-index:1}
+  .oa .pill{font-family:"Fraunces",serif;font-style:italic;font-size:12.5px;letter-spacing:.06em;color:#8fd6a1;display:inline-block;margin-bottom:5px}
+  .oa h4{font-family:"Shippori Mincho",serif;font-weight:700;font-size:19px;color:var(--paper);line-height:1.5}
+  .oa p{font-size:13.5px;color:#bdcdc1;margin-top:4px}
+  .oa .stores{margin-left:auto;display:flex;gap:0;flex-wrap:wrap;position:relative;z-index:1}
+  .oa .stores span{font-size:13.5px;color:var(--paper);font-weight:700;border-left:1px solid rgba(255,255,255,.22);padding:2px 0 2px 16px;margin-left:16px}
+  .oa .stores span:first-child{border-left:none;margin-left:0;padding-left:0}
+  .oa .stores small{display:block;font-size:12px;color:#9fb6a6;font-weight:400;margin-top:2px}
+  @media(max-width:680px){.oa .stores{margin-left:0;margin-top:6px}}
 
-  .others{margin-top:26px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:center}
-  .others .o{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 18px;font-weight:700;box-shadow:var(--shadow-sm);font-size:14.5px}
-  .others .o small{display:block;font-size:11px;color:var(--muted);font-weight:600}
-  .others .more{color:var(--muted);font-weight:700;font-size:14px}
+  .logobar{background:var(--green);padding:36px 0;border-top:1px solid var(--line)}
+  .logobar .row{display:flex;align-items:center;gap:14px 32px;flex-wrap:nowrap;justify-content:center}
+  .logobar .lb{height:29px;width:auto;max-width:124px;object-fit:contain;flex:none}
+  .logobar .ck{display:flex;align-items:center;gap:9px;color:var(--paper);flex:none;white-space:nowrap}
+  .logobar .ck img{width:32px;height:32px;object-fit:cover;border-radius:3px;flex:none}
+  .logobar .ck b{font-family:"Shippori Mincho",serif;font-weight:600;font-size:14px}
+  .logobar .txt{font-family:"Shippori Mincho",serif;color:var(--paper);font-weight:600;font-size:14px;line-height:1.3;flex:none;white-space:nowrap}
+  .logobar .txt small{display:block;font-size:11px;color:#9fb6a6;font-weight:400;letter-spacing:.04em}
+  .logobar .chip{background:#fff;border-radius:6px;padding:7px 13px;display:inline-flex;align-items:center;flex:none}
+  .logobar .chip img{height:23px;width:auto;display:block}
+  .logobar .lb-sq{height:37px;width:auto;object-fit:contain;flex:none}
+  @media(max-width:900px){.logobar .row{flex-wrap:wrap;gap:16px 30px}}
+  .logobar .label{text-align:center;font-family:"Fraunces",serif;font-size:11px;letter-spacing:.2em;color:#8fb39c;text-transform:uppercase;margin-bottom:22px}
+  .others{margin-top:30px;font-size:14px;color:var(--ink-soft);text-align:center}
+  .others b{color:var(--green);font-weight:700}
 
   /* ---------- solve ---------- */
-  .solve-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:48px}
-  @media(max-width:820px){.solve-grid{grid-template-columns:repeat(2,1fr)}}
-  @media(max-width:480px){.solve-grid{grid-template-columns:1fr}}
-  .scard{text-align:center;padding:30px 20px;border-radius:16px;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-sm)}
-  .scard .e{font-size:30px}
-  .scard h4{margin:12px 0 6px;font-size:17px;font-weight:800}
-  .scard p{font-size:13.5px;color:var(--muted)}
+  .solve-grid{display:grid;grid-template-columns:1fr 1fr;margin-top:50px;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+  @media(max-width:680px){.solve-grid{grid-template-columns:1fr}}
+  .scell{padding:34px 36px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .scell .no{font-family:"Fraunces",serif;font-style:italic;color:var(--accent);font-size:15px}
+  .scell h4{font-family:"Shippori Mincho",serif;font-weight:700;font-size:20px;color:var(--green);margin:8px 0 9px}
+  .scell p{font-size:14px;color:var(--ink-soft);line-height:1.85}
 
   /* ---------- comparison ---------- */
-  .cmp{overflow-x:auto;margin-top:46px}
-  table{width:100%;border-collapse:separate;border-spacing:0;min-width:560px;background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
-  th,td{padding:18px 20px;text-align:left;border-bottom:1px solid var(--line);font-size:15px}
-  thead th{background:var(--navy);color:#fff;font-weight:800;font-size:14px}
-  thead th.us{background:var(--green)}
-  tbody td:first-child{font-weight:700;color:var(--ink);background:#fafbfd}
-  td.us{font-weight:800;color:var(--green-d)}
-  td .x{color:#c0392b;font-weight:800}
-  tbody tr:last-child td{border-bottom:none}
+  .cmp{margin-top:46px;overflow-x:auto}
+  table{width:100%;border-collapse:collapse;min-width:600px}
+  th,td{padding:19px 24px;text-align:left;font-size:15.5px;border-bottom:1px solid var(--line-d)}
+  thead th{font-family:"Shippori Mincho",serif;font-weight:700;font-size:15px;color:var(--ink-soft);border-bottom:2px solid var(--line-d)}
+  /* 比較項目（左列）を読みやすく */
+  tbody td:first-child{color:var(--ink);font-weight:700;font-size:15px}
+  /* L-step列は控えめに */
+  thead th:last-child,tbody td:last-child{color:var(--muted);font-weight:500}
+  /* LINE Harness（当社）列を強調 */
+  thead th.us{color:var(--green);background:rgba(43,168,74,.12);border-bottom:2px solid var(--green);font-size:16px}
+  td.us{color:var(--green);font-weight:700;background:rgba(43,168,74,.07);font-size:15.5px}
+  td.us .ck{color:var(--accent);font-weight:700;margin-right:5px}
+  td .x{color:var(--muted)}
+  tbody tr:last-child td{border-bottom:1px solid var(--line-d)}
+  .cmpnote{margin-top:18px;font-size:12.5px;color:var(--muted);line-height:1.8}
+  .cmpnote b{color:var(--ink-soft);font-weight:700}
 
-  /* ---------- steps ---------- */
-  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:48px;counter-reset:s}
-  @media(max-width:820px){.steps{grid-template-columns:1fr 1fr}}
-  @media(max-width:480px){.steps{grid-template-columns:1fr}}
-  .step{position:relative;background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px 22px;box-shadow:var(--shadow-sm)}
-  .step::before{counter-increment:s;content:"0" counter(s);display:block;font-size:28px;font-weight:900;line-height:1;color:var(--green);opacity:.95;font-style:italic;margin-bottom:12px}
-  .step h4{margin:0 0 6px;font-size:17px;font-weight:800}
-  .step p{font-size:13.5px;color:var(--muted)}
-
-  /* ---------- partner ---------- */
-  .partner{background:var(--navy);color:#fff}
-  .partner .h2{color:#fff}
-  .pcols{display:grid;grid-template-columns:1fr auto 1fr;gap:24px;align-items:center;margin-top:46px}
-  @media(max-width:820px){.pcols{grid-template-columns:1fr;gap:16px}}
-  .pcol{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:var(--radius);padding:32px 28px}
-  .pcol .role{font-size:12px;font-weight:800;letter-spacing:.12em;color:var(--green)}
-  .pcol h3{font-size:22px;font-weight:900;margin:8px 0 10px}
-  .pcol p{color:#bcccea;font-size:14.5px}
-  .pcross{font-size:34px;font-weight:900;color:var(--green);text-align:center}
-  @media(max-width:820px){.pcross{transform:rotate(90deg)}}
+  /* ---------- flow ---------- */
+  .flow{margin-top:48px;display:grid;gap:0}
+  .fstep{display:grid;grid-template-columns:120px 1fr;gap:34px;padding:30px 0;border-top:1px solid var(--line);align-items:baseline}
+  .flow .fstep:last-child{border-bottom:1px solid var(--line)}
+  .fstep .no{font-family:"Fraunces",serif;font-size:15px;font-style:italic;color:var(--accent);letter-spacing:.1em}
+  .fstep h4{font-family:"Shippori Mincho",serif;font-weight:700;font-size:20px;color:var(--green);margin-bottom:6px}
+  .fstep p{font-size:14.5px;color:var(--ink-soft)}
+  @media(max-width:680px){.fstep{grid-template-columns:1fr;gap:6px}}
 
   /* ---------- contact ---------- */
-  .contact{background:linear-gradient(135deg,#06C755,#048f3f);color:#fff;text-align:center}
-  .contact .h2{color:#fff}
-  .contact .sub{color:rgba(255,255,255,.9)}
-  .formbox{margin-top:42px;background:#fff;border-radius:22px;padding:18px;box-shadow:0 20px 60px rgba(0,0,0,.2);max-width:760px;margin-left:auto;margin-right:auto}
-  .cform{display:grid;gap:20px;text-align:left;padding:20px}
+  .contact{background:var(--green);color:var(--paper)}
+  .contact .eyebrow{color:#7fd092}.contact .eyebrow::before{background:#7fd092}
+  .contact .grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:54px;align-items:start}
+  @media(max-width:880px){.contact .grid{grid-template-columns:1fr;gap:34px}}
+  .contact h2{font-family:"Shippori Mincho",serif;font-weight:800;font-size:clamp(26px,3.6vw,40px);line-height:1.45;color:var(--paper);word-break:keep-all;text-wrap:pretty}
+  .contact .deck{color:#cfdcd2;margin-top:18px;font-size:15px}
+  .contact .assure{margin-top:26px;border-top:1px solid rgba(255,255,255,.18);padding-top:20px}
+  .contact .assure li{list-style:none;font-size:13.5px;color:#cbd6cc;padding-left:22px;position:relative;margin-bottom:9px}
+  .contact .assure li::before{content:"";position:absolute;left:0;top:11px;width:9px;height:9px;border:1.5px solid var(--accent);border-top:none;border-right:none;transform:rotate(-45deg)}
+  .formbox{background:var(--paper);padding:36px 34px;color:var(--ink)}
+  .cform{display:grid;gap:20px}
   .cform .field{display:flex;flex-direction:column;gap:8px}
-  .cform label.lb{font-weight:700;font-size:14px;color:var(--ink)}
-  .cform .req{font-size:11px;color:#fff;background:var(--green);padding:2px 8px;border-radius:6px;margin-left:6px;font-weight:700;vertical-align:middle}
-  .cform .opt{font-size:11px;color:var(--muted);background:#eef2f7;padding:2px 8px;border-radius:6px;margin-left:6px;font-weight:700;vertical-align:middle}
-  .cform input[type=text],.cform input[type=email],.cform textarea{width:100%;padding:13px 15px;border:1.5px solid var(--line);border-radius:11px;font-size:15px;font-family:inherit;color:var(--ink);background:#fff;transition:.15s}
-  .cform input:focus,.cform textarea:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 3px rgba(6,199,85,.16)}
-  .cform textarea{resize:vertical;min-height:110px}
-  .cform .radios{display:flex;flex-direction:column;gap:10px}
-  .cform .radio{display:flex;align-items:center;gap:11px;font-weight:600;font-size:14.5px;color:#3a4a63;cursor:pointer;border:1.5px solid var(--line);border-radius:11px;padding:12px 15px;transition:.15s}
-  .cform .radio:hover{border-color:#bfe9cd;background:#f7fcf9}
-  .cform .radio input{accent-color:var(--green);width:18px;height:18px;flex:none}
-  .submitbtn{margin-top:4px;background:var(--green);color:#fff;border:none;padding:16px;border-radius:12px;font-weight:800;font-size:16px;cursor:pointer;box-shadow:0 10px 24px rgba(6,199,85,.35);transition:.2s}
-  .submitbtn:hover{background:var(--green-d);transform:translateY(-1px)}
-  .form-thanks{text-align:center;padding:54px 24px}
-  .form-thanks .ic{width:64px;height:64px;border-radius:50%;background:var(--green);color:#fff;font-size:32px;display:grid;place-items:center;margin:0 auto 18px;box-shadow:0 8px 20px rgba(6,199,85,.4)}
-  .form-thanks h3{font-size:22px;font-weight:800;color:var(--ink);margin-bottom:8px}
-  .form-thanks p{color:var(--muted);font-size:15px}
-  .contact .note{margin-top:18px;font-size:13px;color:rgba(255,255,255,.85)}
+  .cform label.lb{font-weight:700;font-size:13.5px;color:var(--green)}
+  .cform .req{font-size:10px;color:var(--paper);background:var(--accent);padding:2px 7px;margin-left:7px;font-weight:700;letter-spacing:.04em}
+  .cform .opt{font-size:10px;color:var(--muted);background:var(--paper2);padding:2px 7px;margin-left:7px;font-weight:700}
+  .cform input[type=text],.cform input[type=email],.cform textarea{width:100%;padding:13px 14px;border:1px solid var(--line-d);font-size:15px;font-family:inherit;color:var(--ink);background:var(--paper);transition:.15s}
+  .cform input:focus,.cform textarea:focus{outline:none;border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}
+  .cform textarea{resize:vertical;min-height:104px}
+  .cform .radios{display:flex;flex-direction:column;gap:9px}
+  .cform .radio{display:flex;align-items:center;gap:11px;font-size:14px;color:var(--ink-soft);cursor:pointer;border:1px solid var(--line-d);padding:12px 14px;transition:.15s}
+  .cform .radio:hover{border-color:var(--accent)}
+  .cform .radio input{accent-color:var(--accent);width:17px;height:17px;flex:none}
+  .submitbtn{margin-top:4px;background:var(--green);color:var(--paper);border:none;padding:16px;font-weight:700;font-size:15.5px;letter-spacing:.04em;cursor:pointer;transition:.2s}
+  .submitbtn:hover{background:var(--green-d)}
+  .form-thanks{text-align:center;padding:50px 20px}
+  .form-thanks .ic{width:56px;height:56px;border:2px solid var(--accent);color:var(--accent);font-size:26px;display:grid;place-items:center;margin:0 auto 18px;transform:rotate(0)}
+  .form-thanks h3{font-family:"Shippori Mincho",serif;font-size:21px;color:var(--green);margin-bottom:8px}
+  .form-thanks p{color:var(--muted);font-size:14px}
+  .note{margin-top:16px;font-size:12px;color:#9fb6a6}
 
   /* ---------- footer ---------- */
-  footer{background:#081222;color:#7e93b3;padding:46px 0;text-align:center;font-size:13px}
-  footer .logo{justify-content:center;color:#fff;margin-bottom:14px}
-  footer .logo small{color:#7e93b3}
+  footer{background:var(--green-d);color:#8fa395;padding:40px 0;font-size:12.5px}
+  footer .row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}
+  footer .brand b{color:var(--paper)}
+  footer .brand small{color:#7e9488}
 
   /* sticky mobile cta */
-  .mcta{position:fixed;bottom:0;left:0;right:0;z-index:60;background:#fff;border-top:1px solid var(--line);padding:12px 16px;display:none;box-shadow:0 -6px 20px rgba(0,0,0,.08)}
-  .mcta a{display:block;background:var(--green);color:#fff;text-align:center;padding:15px;border-radius:12px;font-weight:800}
-  @media(max-width:680px){.mcta{display:block}body{padding-bottom:78px}}
-  @media(max-width:640px){br.brpc{display:none}}
-  @media(max-width:600px){.hero{padding:34px 0 60px}.hero h1{font-size:clamp(17px,5.7vw,23px);line-height:1.5}.hero p.lead{margin-top:18px}}
+  .mcta{position:fixed;bottom:0;left:0;right:0;z-index:60;background:var(--paper);border-top:1px solid var(--line-d);padding:11px 16px;display:none}
+  .mcta a{display:block;background:var(--green);color:var(--paper);text-align:center;padding:14px;font-weight:700;letter-spacing:.04em}
+  @media(max-width:680px){.mcta{display:block}body{padding-bottom:74px}section{padding:68px 0}}
 </style>
 </head>
 <body>
@@ -207,289 +319,525 @@
 <!-- ===== HEADER ===== -->
 <header>
   <div class="wrap nav">
-    <div class="logo">
-      <span>株式会社プラチナ企画<small>LINE Harness 構築・導入支援</small></span>
+    <div class="brand">
+      <b>株式会社プラチナ企画</b>
+      <small>LINE Harness Construction</small>
     </div>
-    <a href="#contact" class="nav-cta">お問い合わせ</a>
+    <a href="#contact" class="nav-cta">無料相談はこちら</a>
   </div>
 </header>
 
 <!-- ===== HERO ===== -->
 <section class="hero">
+  <div class="hero-deco">
+    <svg viewBox="0 0 452 566" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="bpgrid" width="20" height="20" patternUnits="userSpaceOnUse">
+          <circle cx="1.2" cy="1.2" r="1" fill="#C7C0AE" opacity=".42"/>
+        </pattern>
+        <marker id="ah" markerWidth="9" markerHeight="9" refX="6.2" refY="4.5" orient="auto">
+          <path d="M1.5 1.5 L6.5 4.5 L1.5 7.5" stroke="#1C3A2E" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </marker>
+        <marker id="aha" markerWidth="9" markerHeight="9" refX="6.2" refY="4.5" orient="auto">
+          <path d="M1.5 1.5 L6.5 4.5 L1.5 7.5" stroke="#2BA84A" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </marker>
+        <marker id="ahg" markerWidth="9" markerHeight="9" refX="6.2" refY="4.5" orient="auto">
+          <path d="M1.5 1.5 L6.5 4.5 L1.5 7.5" stroke="#5f9e74" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </marker>
+        <marker id="ahm" markerWidth="8" markerHeight="8" refX="5.6" refY="4" orient="auto">
+          <path d="M1.3 1.3 L5.6 4 L1.3 6.7" stroke="#9aa39a" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </marker>
+        <linearGradient id="scanv" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#2BA84A" stop-opacity="0"/>
+          <stop offset="0.5" stop-color="#2BA84A" stop-opacity=".15"/>
+          <stop offset="1" stop-color="#2BA84A" stop-opacity="0"/>
+        </linearGradient>
+        <clipPath id="sheet"><rect x="7" y="7" width="438" height="552"/></clipPath>
+      </defs>
+      <!-- 製図シート -->
+      <rect x="6" y="6" width="440" height="554" fill="#FAF8F3" stroke="#D9D3C4"/>
+      <rect x="7" y="7" width="438" height="552" fill="url(#bpgrid)"/>
+      <!-- スキャンビーム（最適化エンジンの走査） -->
+      <g clip-path="url(#sheet)">
+        <rect class="scan" x="7" y="7" width="438" height="48" fill="url(#scanv)">
+          <animate attributeName="y" values="-48;540;-48" dur="6s" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.2 1;0.4 0 0.2 1" repeatCount="indefinite"/>
+        </rect>
+      </g>
+      <path d="M6 28 V6 H28 M424 6 H446 V28 M446 538 V560 H424 M28 560 H6 V538" stroke="#1C3A2E" stroke-width="1.5" fill="none"/>
+      <!-- ヘッダー -->
+      <text x="24" y="32" font-family="Fraunces, serif" font-style="italic" font-size="14" fill="#2BA84A">Funnel Blueprint</text>
+      <circle class="blink" cx="151" cy="28" r="3.2" fill="#2BA84A"/>
+      <text class="blink" x="159" y="32" font-family="Fraunces, serif" font-style="italic" font-size="11" fill="#2BA84A">LIVE</text>
+      <text x="24" y="50" font-family="'Zen Kaku Gothic New',sans-serif" font-size="11.5" fill="#727A70" letter-spacing=".4">AI最適化で回す統合ファネル設計</text>
+      <line x1="24" y1="60" x2="428" y2="60" stroke="#D9D3C4"/>
+      <text x="404" y="40" text-anchor="end" font-family="Fraunces, serif" font-style="italic" font-size="12" fill="#2BA84A">PDCA</text>
+      <g class="spin">
+        <path d="M420 27 A9 9 0 1 0 429 36" stroke="#2BA84A" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+        <path d="M417 26 L420 27 L419 30" stroke="#2BA84A" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+
+      <!-- 01 友だち追加 -->
+      <text x="178" y="96" text-anchor="end" font-family="Fraunces, serif" font-size="11" fill="#9aa39a">01</text>
+      <rect x="186" y="72" width="124" height="38" rx="10" fill="#FAF8F3" stroke="#1C3A2E" stroke-width="1.4"/>
+      <text x="248" y="96" text-anchor="middle" font-family="'Zen Kaku Gothic New',sans-serif" font-weight="700" font-size="14" fill="#1B2620">友だち追加</text>
+      <text x="318" y="86" font-family="'Zen Kaku Gothic New',sans-serif" font-size="10.5" fill="#9aa39a">広告</text>
+      <text x="318" y="98" font-family="'Zen Kaku Gothic New',sans-serif" font-size="10.5" fill="#9aa39a">QR / 店頭</text>
+      <path class="flow" d="M248 110 V124" stroke="#1C3A2E" stroke-width="1.4" marker-end="url(#ah)"/>
+
+      <!-- 02 属性判定・タグ付け -->
+      <text x="160" y="150" text-anchor="end" font-family="Fraunces, serif" font-size="11" fill="#9aa39a">02</text>
+      <rect x="168" y="126" width="160" height="40" rx="10" fill="#F1EDE2" stroke="#1C3A2E" stroke-width="1.3"/>
+      <rect x="292" y="119" width="30" height="15" rx="7.5" fill="#2BA84A"/>
+      <text x="307" y="129.6" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-size="10" fill="#FAF8F3">AI</text>
+      <circle class="spin" cx="188" cy="146" r="6" fill="none" stroke="#2BA84A" stroke-width="1.4" stroke-dasharray="3 3"/>
+      <text x="256" y="143" text-anchor="middle" font-family="'Zen Kaku Gothic New',sans-serif" font-weight="700" font-size="11.5" fill="#1B2620">属性判定・自動タグ付け</text>
+      <text x="256" y="157" text-anchor="middle" font-family="'Zen Kaku Gothic New',sans-serif" font-size="10.5" fill="#727A70">スコアリング / 関心度の可視化</text>
+      <path class="flow" d="M248 166 V180" stroke="#1C3A2E" stroke-width="1.4" marker-end="url(#ah)"/>
+
+      <!-- 03 セグメント分岐 -->
+      <text x="186" y="210" text-anchor="end" font-family="Fraunces, serif" font-size="11" fill="#9aa39a">03</text>
+      <path d="M248 182 L278 206 L248 230 L218 206 Z" fill="#FAF8F3" stroke="#1C3A2E" stroke-width="1.4"/>
+      <text x="248" y="210" text-anchor="middle" font-family="'Zen Kaku Gothic New',sans-serif" font-weight="700" font-size="11" fill="#1C3A2E">分岐</text>
+      <text x="286" y="203" font-family="'Zen Kaku Gothic New',sans-serif" font-size="10.5" fill="#727A70">セグメント別</text>
+      <text x="286" y="215" font-family="'Zen Kaku Gothic New',sans-serif" font-size="10.5" fill="#727A70">スコア別に出し分け</text>
+      <path class="flow" d="M224 212 L112 254" stroke="#1C3A2E" stroke-width="1.2" marker-end="url(#ah)"/>
+      <path class="flow" d="M248 230 V254" stroke="#1C3A2E" stroke-width="1.2" marker-end="url(#ah)"/>
+      <path class="flow" d="M272 212 L384 254" stroke="#1C3A2E" stroke-width="1.2" marker-end="url(#ah)"/>
+
+      <!-- セグメント行（3） -->
+      <rect x="44" y="256" width="112" height="34" rx="9" fill="#FAF8F3" stroke="#3A453E" stroke-width="1.2"/>
+      <text x="100" y="277" text-anchor="middle" font-family="'Zen Kaku Gothic New',sans-serif" font-weight="700" font-size="12" fill="#1B2620">新規・見込</text>
+      <rect x="192" y="256" width="112" height="34" rx="9" fill="#FAF8F3" stroke="#3A453E" stroke-width="1.2"/>
+      <text x="248" y="277" text-anchor="middle" font-family="'Zen Kaku Gothic New',sans-serif" font-weight="700" font-size="12" fill="#1B2620">検討中</text>
+      <rect x="334" y="256" width="110" height="34" rx="9" fill="#FAF8F3" stroke="#3A453E" stroke-width="1.2"/>
+      <text x="389" y="277" text-anchor="middle" font-family="'Zen Kaku Gothic New',sans-serif" font-weight="700" font-size="12" fill="#1B2620">既存・休眠</text>
+      <path class="flow" d="M100 290 V322" stroke="#3A453E" stroke-width="1.2" marker-end="url(#ah)"/>
+      <path class="flow" d="M248 290 V322" stroke="#3A453E" stroke-width="1.2" marker-end="url(#ah)"/>
+      <path class="flow" d="M389 290 V322" stroke="#3A453E" stroke-width="1.2" marker-end="url(#ah)"/>
+
+      <!-- 施策行（4・A/B含む） -->
+      <rect x="44" y="324" width="112" height="34" rx="9" fill="#FAF8F3" stroke="#2C6A45" stroke-width="1.2"/>
+      <text x="100" y="345" text-anchor="middle" font-family="'Zen Kaku Gothic New',sans-serif" font-weight="700" font-size="11.5" fill="#1C3A2E">ステップ配信</text>
+      <rect x="192" y="324" width="112" height="34" rx="9" fill="#FAF8F3" stroke="#2C6A45" stroke-width="1.2"/>
+      <text x="248" y="345" text-anchor="middle" font-family="'Zen Kaku Gothic New',sans-serif" font-weight="700" font-size="11.5" fill="#1C3A2E">シナリオ配信</text>
+      <rect x="334" y="324" width="110" height="34" rx="9" fill="#FAF8F3" stroke="#2C6A45" stroke-width="1.2"/>
+      <text x="389" y="341" text-anchor="middle" font-family="'Zen Kaku Gothic New',sans-serif" font-weight="700" font-size="11" fill="#1C3A2E">リマインド</text>
+      <text x="389" y="353" text-anchor="middle" font-family="'Zen Kaku Gothic New',sans-serif" font-size="10" fill="#727A70">再アクティブ化</text>
+      <!-- A/Bタグ -->
+      <rect x="216" y="361" width="64" height="17" rx="4" fill="#FAF8F3" stroke="#2BA84A" stroke-width="1"/>
+      <text x="248" y="373" text-anchor="middle" font-family="Fraunces, serif" font-size="10.5" fill="#2BA84A">A / B test</text>
+
+      <!-- 合流 → CV -->
+      <path class="flow" d="M100 358 L196 402" stroke="#2BA84A" stroke-width="1.5" marker-end="url(#aha)"/>
+      <path class="flow" d="M248 378 V402" stroke="#2BA84A" stroke-width="1.5" marker-end="url(#aha)"/>
+      <path class="flow" d="M389 358 L300 402" stroke="#2BA84A" stroke-width="1.5" marker-end="url(#aha)"/>
+      <text x="158" y="398" text-anchor="end" font-family="Fraunces, serif" font-size="11" fill="#9aa39a">04</text>
+      <rect class="pulse" x="160" y="404" width="176" height="46" rx="12" fill="#2BA84A" opacity="0"/>
+      <rect x="160" y="404" width="176" height="46" rx="12" fill="#2BA84A"/>
+      <path d="M180 426 l5 5 9 -10" stroke="#FAF8F3" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="256" y="432" text-anchor="middle" font-family="'Zen Kaku Gothic New',sans-serif" font-weight="700" font-size="15" fill="#FAF8F3">予約・購入へ</text>
+
+      <!-- 05 計測・効果測定 + KPIバー -->
+      <path class="flow" d="M248 450 L206 468" stroke="#2BA84A" stroke-width="1.3" marker-end="url(#aha)"/>
+      <text x="118" y="488" text-anchor="end" font-family="Fraunces, serif" font-size="11" fill="#9aa39a">05</text>
+      <rect x="124" y="468" width="148" height="36" rx="9" fill="#F1EDE2" stroke="#1C3A2E" stroke-width="1.2"/>
+      <text x="198" y="485" text-anchor="middle" font-family="'Zen Kaku Gothic New',sans-serif" font-weight="700" font-size="12" fill="#1B2620">計測・効果測定</text>
+      <text x="198" y="497" text-anchor="middle" font-family="'Zen Kaku Gothic New',sans-serif" font-size="10" fill="#727A70">開封 / CTR / CVR</text>
+      <!-- KPIミニバー -->
+      <text x="300" y="464" font-family="Fraunces, serif" font-style="italic" font-size="10.5" fill="#9aa39a">KPI</text>
+      <line x1="300" y1="503" x2="430" y2="503" stroke="#D9D3C4"/>
+      <rect x="312" y="470" width="16" height="33" rx="1.5" fill="#E4DECF"/>
+      <rect class="kbar" x="312" y="470" width="16" height="33" rx="1.5" fill="#2BA84A" style="animation-delay:0s"/>
+      <rect x="346" y="470" width="16" height="33" rx="1.5" fill="#E4DECF"/>
+      <rect class="kbar" x="346" y="470" width="16" height="33" rx="1.5" fill="#2BA84A" style="animation-delay:.5s"/>
+      <rect x="380" y="470" width="16" height="33" rx="1.5" fill="#E4DECF"/>
+      <rect class="kbar" x="380" y="470" width="16" height="33" rx="1.5" fill="#5f9e74" style="animation-delay:1s"/>
+      <rect x="414" y="470" width="16" height="33" rx="1.5" fill="#E4DECF"/>
+      <rect class="kbar" x="414" y="470" width="16" height="33" rx="1.5" fill="#2BA84A" style="animation-delay:1.4s"/>
+
+      <!-- PDCA フィードバックループ（改善） -->
+      <path class="flow-rev" d="M124 486 C 66 486 30 470 30 360 C 30 232 28 178 78 152 C 104 138 142 142 168 148" stroke="#5f9e74" stroke-width="1.4" marker-end="url(#ahg)"/>
+      <rect x="12" y="296" width="34" height="20" fill="#FAF8F3"/>
+      <text x="29" y="310" text-anchor="middle" font-family="'Zen Kaku Gothic New',sans-serif" font-weight="700" font-size="11" fill="#2C6A45">改善</text>
+      <!-- 既存→新規への再循環（細い補助線） -->
+      <path class="flow-s" d="M334 273 C 290 273 250 250 224 240" stroke="#9aa39a" stroke-width="1" fill="none" marker-end="url(#ahm)"/>
+
+      <!-- 走るパケット -->
+      <circle r="3" fill="#2BA84A"><animateMotion dur="3s" repeatCount="indefinite" path="M248 110 V126 V182 V256 V324 V404"/></circle>
+      <circle r="3" fill="#2BA84A"><animateMotion dur="3s" begin="1.5s" repeatCount="indefinite" path="M248 110 V126 V182 V256 V324 V404"/></circle>
+      <circle r="2.6" fill="#1C3A2E"><animateMotion dur="3.4s" begin=".6s" repeatCount="indefinite" path="M248 182 L100 256 V324"/></circle>
+      <circle r="2.6" fill="#1C3A2E"><animateMotion dur="3.4s" begin="2s" repeatCount="indefinite" path="M248 182 L389 256 V324"/></circle>
+      <circle r="2.8" fill="#8fd6a1"><animateMotion dur="5s" repeatCount="indefinite" path="M124 486 C 66 486 30 470 30 360 C 30 232 28 178 78 152 C 104 138 142 142 168 148"/></circle>
+
+      <!-- 下部 PDCAステッパー -->
+      <line x1="24" y1="520" x2="428" y2="520" stroke="#E4DECF"/>
+      <circle cx="96" cy="538" r="3.5" fill="#2BA84A"/><line x1="100" y1="538" x2="148" y2="538" stroke="#C7C0AE"/>
+      <circle cx="172" cy="538" r="3.5" fill="#2BA84A"/><line x1="176" y1="538" x2="224" y2="538" stroke="#C7C0AE"/>
+      <circle cx="248" cy="538" r="3.5" fill="#2BA84A"/><line x1="252" y1="538" x2="300" y2="538" stroke="#C7C0AE"/>
+      <circle cx="324" cy="538" r="3.5" fill="#2BA84A"/>
+      <text x="96" y="554" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-size="11" fill="#727A70">Plan</text>
+      <text x="172" y="554" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-size="11" fill="#727A70">Do</text>
+      <text x="248" y="554" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-size="11" fill="#727A70">Check</text>
+      <text x="324" y="554" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-size="11" fill="#727A70">Act</text>
+    </svg>
+  </div>
   <div class="wrap">
-    <span class="badge"><span class="dot"></span><span><span class="ph">LINE Harness 正規パートナー｜</span><span class="ph">開発者 野田修一氏 連携</span></span></span>
-    <h1><span class="ph">"集めて終わり"の公式LINEを、</span><br><span class="hl ph">"売上をつくる仕組み"へ。</span></h1>
-    <p class="lead"><span class="ph">LINE Harnessは、</span><span class="ph">AI（自然言語）で構築する</span><span class="ph">次世代のLINE CRM。</span><br class="brpc"><span class="ph">L-stepの月額コストを</span><span class="ph">抑えながら、</span><span class="ph">配信から接客・運用まで</span><span class="ph">"御社専用"に作り込めます。</span></p>
-    <div class="btns">
-      <a href="#contact" class="btn-main">無料で相談する</a>
-      <a href="#results" class="btn-ghost">実績を見る</a>
+    <div class="hero-inner">
+      <div class="hero-badge"><span class="hb-mark">LINE Harness</span><span class="hb-tag">公式LINE 構築・導入支援</span></div>
+      <h1>友だちを“集める”だけで、止まっていませんか。<br><span class="sm">公式</span><span class="hl">LINE</span><span class="sm">を、</span><span class="u">売上をつくる仕組み</span><span class="sm">へ。</span></h1>
+      <p class="lead">オープンソースの<b>LINE</b> CRM「<b>LINE Harness</b>」を、私たちが御社専用に構築。配信から接客・運用までを一気通貫で設計します。</p>
+      <div class="meta">
+        <div><div class="n"><span class="num" data-count="22">0</span><span>万人+</span></div><div class="c">最大規模の友だち構築実績</div></div>
+        <div><div class="n">多業種</div><div class="c">教育・温浴・自動車ほか</div></div>
+      </div>
+      <div class="btns">
+        <a href="#contact" class="btn">無料で相談する</a>
+        <a href="#results" class="link-arrow">構築実績を見る →</a>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ===== TRUST BAR ===== -->
-<div class="trust">
+<!-- ===== WHY LINE HARNESS（運用費ゼロ／専用カスタマイズ） ===== -->
+<section class="edge">
   <div class="wrap">
-    <span class="label">導入・構築実績</span>
-    <div class="logos">
-      <img class="lg" src="assets/logos/hotta.png" alt="堀田湯">
-      <img class="lg" src="assets/logos/narita_white.svg" alt="成田モータース">
-      <img class="lg" src="assets/logos/infinity.svg" alt="Infinity Free">
-      <img class="lg" src="assets/logos/uyama_w.png" alt="鵜山リゾート">
-      <span class="brandlock"><img class="emblem" src="assets/logos/tatsuki.jpg" alt="龍城さうな">龍城さうな</span>
-      <span class="ctext">某大手教育系スクール<small>※社名非公開</small></span>
+    <span class="eyebrow">Why LINE Harness</span>
+    <h2 class="h2"><b>LINE Harness</b>だから実現できる、2つの優位性。</h2>
+    <div class="edge-grid">
+      <div class="ec">
+        <div class="ec-no">01 — COST</div>
+        <h3>運用費は、<span class="em">ゼロ円</span>。</h3>
+        <p>LINE Harnessは、開発者・野田修一氏が公開したオープンソースのLINE CRM。L-stepのように毎月のツール利用料を払い続ける必要はありません。初期構築のあとは、御社自身の“資産”として運用できます。</p>
+        <div class="tagrow"><span>月額ツール費 0円</span><span>オープンソース</span><span>御社の資産として保有</span></div>
+      </div>
+      <div class="ec">
+        <div class="ec-no">02 — CUSTOM</div>
+        <h3>自社専用の、<span class="em">独自カスタマイズ</span>。</h3>
+        <p>既製ツールの「標準機能」に、御社の業務を合わせる必要はありません。商材・顧客導線・既存システムに合わせ、必要な機能だけを一から設計・実装。“使わない機能”に費用を払うこともありません。</p>
+        <div class="tagrow"><span>フルスクラッチ設計</span><span>既存システム連携</span><span>御社専用の管理画面</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== AI STACK MARQUEE ===== -->
+<section class="aistack">
+  <div class="wrap">
+    <span class="eyebrow">AI Stack</span>
+    <p class="ai-lead">私たちは、特定のツールに固執しません。<b>Claude Code・各種LLM・自動化基盤を用途ごとに使い分け</b>、御社の課題に対する“最適なソリューション”をその都度組み立てて構築します。</p>
+  </div>
+  <div class="marquee" aria-hidden="true">
+    <div class="track">
+      <div class="ai-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m4.7144 15.9555 4.7174-2.6471.079-.2307-.079-.1275h-.2307l-.7893-.0486-2.6956-.0729-2.3375-.0971-2.2646-.1214-.5707-.1215-.5343-.7042.0546-.3522.4797-.3218.686.0608 1.5179.1032 2.2767.1578 1.6514.0972 2.4468.255h.3886l.0546-.1579-.1336-.0971-.1032-.0972L6.973 9.8356l-2.55-1.6879-1.3356-.9714-.7225-.4918-.3643-.4614-.1578-1.0078.6557-.7225.8803.0607.2246.0607.8925.686 1.9064 1.4754 2.4893 1.8336.3643.3035.1457-.1032.0182-.0728-.164-.2733-1.3539-2.4467-1.445-2.4893-.6435-1.032-.17-.6194c-.0607-.255-.1032-.4674-.1032-.7285L6.287.1335 6.6997 0l.9957.1336.419.3642.6192 1.4147 1.0018 2.2282 1.5543 3.0296.4553.8985.2429.8318.091.255h.1579v-.1457l.1275-1.706.2368-2.0947.2307-2.6957.0789-.7589.3764-.9107.7468-.4918.5828.2793.4797.686-.0668.4433-.2853 1.8517-.5586 2.9021-.3643 1.9429h.2125l.2429-.2429.9835-1.3053 1.6514-2.0643.7286-.8196.85-.9046.5464-.4311h1.0321l.759 1.1293-.34 1.1657-1.0625 1.3478-.8804 1.1414-1.2628 1.7-.7893 1.36.0729.1093.1882-.0183 2.8535-.607 1.5421-.2794 1.8396-.3157.8318.3886.091.3946-.3278.8075-1.967.4857-2.3072.4614-3.4364.8136-.0425.0304.0486.0607 1.5482.1457.6618.0364h1.621l3.0175.2247.7892.522.4736.6376-.079.4857-1.2142.6193-1.6393-.3886-3.825-.9107-1.3113-.3279h-.1822v.1093l1.0929 1.0686 2.0035 1.8092 2.5075 2.3314.1275.5768-.3218.4554-.34-.0486-2.2039-1.6575-.85-.7468-1.9246-1.621h-.1275v.17l.4432.6496 2.3436 3.5214.1214 1.0807-.17.3521-.6071.2125-.6679-.1214-1.3721-1.9246L14.38 17.959l-1.1414-1.9428-.1397.079-.674 7.2552-.3156.3703-.7286.2793-.6071-.4614-.3218-.7468.3218-1.4753.3886-1.9246.3157-1.53.2853-1.9004.17-.6314-.0121-.0425-.1397.0182-1.4328 1.9672-2.1796 2.9446-1.7243 1.8456-.4128.164-.7164-.3704.0667-.6618.4008-.5889 2.386-3.0357 1.4389-1.882.929-1.0868-.0062-.1579h-.0546l-6.3385 4.1164-1.1293.1457-.4857-.4554.0608-.7467.2307-.2429 1.9064-1.3114Z"/></svg><span>Claude Code</span></div>
+      <div class="ai-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z"/></svg><span>OpenAI</span></div>
+      <div class="ai-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.04 19.32Q12 21.51 12 24q0-2.49.93-4.68.96-2.19 2.58-3.81t3.81-2.55Q21.51 12 24 12q-2.49 0-4.68-.93a12.3 12.3 0 0 1-3.81-2.58 12.3 12.3 0 0 1-2.58-3.81Q12 2.49 12 0q0 2.49-.96 4.68-.93 2.19-2.55 3.81a12.3 12.3 0 0 1-3.81 2.58Q2.49 12 0 12q2.49 0 4.68.96 2.19.93 3.81 2.55t2.55 3.81"/></svg><span>Gemini</span></div>
+      <div class="ai-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg><span>GitHub</span></div>
+      <div class="ai-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.4737 5.6842c-1.1772 0-2.1663.8051-2.4468 1.8947h-2.8955c-1.235 0-2.289.893-2.492 2.111l-.1038.623a1.263 1.263 0 0 1-1.246 1.0555H11.289c-.2805-1.0896-1.2696-1.8947-2.4468-1.8947s-2.1663.8051-2.4467 1.8947H4.973c-.2805-1.0896-1.2696-1.8947-2.4468-1.8947C1.1311 9.4737 0 10.6047 0 12s1.131 2.5263 2.5263 2.5263c1.1772 0 2.1663-.8051 2.4468-1.8947h1.4223c.2804 1.0896 1.2696 1.8947 2.4467 1.8947 1.1772 0 2.1663-.8051 2.4468-1.8947h1.0008a1.263 1.263 0 0 1 1.2459 1.0555l.1038.623c.203 1.218 1.257 2.111 2.492 2.111h.3692c.2804 1.0895 1.2696 1.8947 2.4468 1.8947 1.3952 0 2.5263-1.131 2.5263-2.5263s-1.131-2.5263-2.5263-2.5263c-1.1772 0-2.1664.805-2.4468 1.8947h-.3692a1.263 1.263 0 0 1-1.246-1.0555l-.1037-.623A2.52 2.52 0 0 0 13.9607 12a2.52 2.52 0 0 0 .821-1.4794l.1038-.623a1.263 1.263 0 0 1 1.2459-1.0555h2.8955c.2805 1.0896 1.2696 1.8947 2.4468 1.8947 1.3952 0 2.5263-1.131 2.5263-2.5263s-1.131-2.5263-2.5263-2.5263m0 1.2632a1.263 1.263 0 0 1 1.2631 1.2631 1.263 1.263 0 0 1-1.2631 1.2632 1.263 1.263 0 0 1-1.2632-1.2632 1.263 1.263 0 0 1 1.2632-1.2631M2.5263 10.7368A1.263 1.263 0 0 1 3.7895 12a1.263 1.263 0 0 1-1.2632 1.2632A1.263 1.263 0 0 1 1.2632 12a1.263 1.263 0 0 1 1.2631-1.2632m6.3158 0A1.263 1.263 0 0 1 10.1053 12a1.263 1.263 0 0 1-1.2632 1.2632A1.263 1.263 0 0 1 7.579 12a1.263 1.263 0 0 1 1.2632-1.2632m10.1053 3.7895a1.263 1.263 0 0 1 1.2631 1.2632 1.263 1.263 0 0 1-1.2631 1.2631 1.263 1.263 0 0 1-1.2632-1.2631 1.263 1.263 0 0 1 1.2632-1.2632"/></svg><span>n8n</span></div>
+      <div class="ai-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.852 8.981h-4.588V0h4.588c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.491-4.49 4.491zM12.735 7.51h3.117c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-3.117V7.51zm0 1.471H8.148c-2.476 0-4.49-2.014-4.49-4.49S5.672 0 8.148 0h4.588v8.981zm-4.587-7.51c-1.665 0-3.019 1.355-3.019 3.019s1.354 3.02 3.019 3.02h3.117V1.471H8.148zm4.587 15.019H8.148c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h4.588v8.98zM8.148 8.981c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h3.117V8.981H8.148zM8.172 24c-2.489 0-4.515-2.014-4.515-4.49s2.014-4.49 4.49-4.49h4.588v4.441c0 2.503-2.047 4.539-4.563 4.539zm-.024-7.51a3.023 3.023 0 0 0-3.019 3.019c0 1.665 1.365 3.019 3.044 3.019 1.705 0 3.093-1.376 3.093-3.068v-2.97H8.148zm7.704 0h-.098c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h.098c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.49-4.49 4.49zm-.097-7.509c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h.098c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-.098z"/></svg><span>Figma</span></div>
+      <div class="ai-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.459 4.208c.746.606 1.026.56 2.428.466l13.215-.793c.28 0 .047-.28-.046-.326L17.86 1.968c-.42-.326-.981-.7-2.055-.607L3.01 2.295c-.466.046-.56.28-.374.466zm.793 3.08v13.904c0 .747.373 1.027 1.214.98l14.523-.84c.841-.046.935-.56.935-1.167V6.354c0-.606-.233-.933-.748-.887l-15.177.887c-.56.047-.747.327-.747.933zm14.337.745c.093.42 0 .84-.42.888l-.7.14v10.264c-.608.327-1.168.514-1.635.514-.748 0-.935-.234-1.495-.933l-4.577-7.186v6.952L12.21 19s0 .84-1.168.84l-3.222.186c-.093-.186 0-.653.327-.746l.84-.233V9.854L7.822 9.76c-.094-.42.14-1.026.793-1.073l3.456-.233 4.764 7.279v-6.44l-1.215-.139c-.093-.514.28-.887.747-.933zM1.936 1.035l13.31-.98c1.634-.14 2.055-.047 3.082.7l4.249 2.986c.7.513.934.653.934 1.213v16.378c0 1.026-.373 1.634-1.68 1.726l-15.458.934c-.98.047-1.448-.093-1.962-.747l-3.129-4.06c-.56-.747-.793-1.306-.793-1.96V2.667c0-.839.374-1.54 1.447-1.632z"/></svg><span>Notion</span></div>
+      <div class="ai-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.3977 7.0896h-2.3106V.0676l-7.5094 6.3542V.1577h-1.1554v6.1966L4.4904 0v7.0896H1.6023v10.3976h2.8882V24l6.932-6.3591v6.2005h1.1554v-6.0469l6.9318 6.1807v-6.4879h2.8882V7.0896zm-3.4657-4.531v4.531h-5.355l5.355-4.531zm-13.2862.0676 4.8691 4.4634H5.6458V2.6262zM2.7576 16.332V8.245h7.8476l-6.1149 6.1147v1.9723H2.7576zm2.8882 5.0404v-3.8852h.0001v-2.6488l5.7763-5.7764v7.0111l-5.7764 5.2993zm12.7086.0248-5.7766-5.1509V9.0618l5.7766 5.7766v6.5588zm2.8882-5.0652h-1.733v-1.9723L13.3948 8.245h7.8478v8.087z"/></svg><span>Perplexity</span></div>
+      <div class="ai-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.796 0a6.93 6.93 0 0 0-4.91 2.019L5.451 5.455l3.273 3.27 3.432-3.432a2.284 2.284 0 0 1 3.277 0 2.28 2.28 0 0 1 0 3.275L12 12.001l3.273 3.273 3.433-3.435c2.692-2.692 2.692-7.127 0-9.82A6.92 6.92 0 0 0 13.796 0m-5.07 8.728-3.433 3.434c-2.692 2.693-2.692 7.126 0 9.819A6.92 6.92 0 0 0 10.203 24a6.93 6.93 0 0 0 4.911-2.02l3.432-3.432-3.271-3.272-3.433 3.433a2.284 2.284 0 0 1-3.277 0 2.28 2.28 0 0 1 0-3.276L12 12z"/></svg><span>LangChain</span></div>
+      <div class="ai-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 10.262v2.712h-9.518V24h-3.034V10.262zm0-5.131v2.717H8.755V24H5.722V5.131zM24 0v2.717H3.034V24H0V0z"/></svg><span>Replicate</span></div>
+      <div class="ai-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.361 10.26a.894.894 0 0 0-.558.47l-.072.148.001.207c0 .193.004.217.059.353.076.193.152.312.291.448.24.238.51.3.872.205a.86.86 0 0 0 .517-.436.752.752 0 0 0 .08-.498c-.064-.453-.33-.782-.724-.897a1.06 1.06 0 0 0-.466 0zm-9.203.005c-.305.096-.533.32-.65.639a1.187 1.187 0 0 0-.06.52c.057.309.31.59.598.667.362.095.632.033.872-.205.14-.136.215-.255.291-.448.055-.136.059-.16.059-.353l.001-.207-.072-.148a.894.894 0 0 0-.565-.472 1.02 1.02 0 0 0-.474.007Zm4.184 2c-.131.071-.223.25-.195.383.031.143.157.288.353.407.105.063.112.072.117.136.004.038-.01.146-.029.243-.02.094-.036.194-.036.222.002.074.07.195.143.253.064.052.076.054.255.059.164.005.198.001.264-.03.169-.082.212-.234.15-.525-.052-.243-.042-.28.087-.355.137-.08.281-.219.324-.314a.365.365 0 0 0-.175-.48.394.394 0 0 0-.181-.033c-.126 0-.207.03-.355.124l-.085.053-.053-.032c-.219-.13-.259-.145-.391-.143a.396.396 0 0 0-.193.032zm.39-2.195c-.373.036-.475.05-.654.086-.291.06-.68.195-.951.328-.94.46-1.589 1.226-1.787 2.114-.04.176-.045.234-.045.53 0 .294.005.357.043.524.264 1.16 1.332 2.017 2.714 2.173.3.033 1.596.033 1.896 0 1.11-.125 2.064-.727 2.493-1.571.114-.226.169-.372.22-.602.039-.167.044-.23.044-.523 0-.297-.005-.355-.045-.531-.288-1.29-1.539-2.304-3.072-2.497a6.873 6.873 0 0 0-.855-.031zm.645.937a3.283 3.283 0 0 1 1.44.514c.223.148.537.458.671.662.166.251.26.508.303.82.02.143.01.251-.043.482-.08.345-.332.705-.672.957a3.115 3.115 0 0 1-.689.348c-.382.122-.632.144-1.525.138-.582-.006-.686-.01-.853-.042-.57-.107-1.022-.334-1.35-.68-.264-.28-.385-.535-.45-.946-.03-.192.025-.509.137-.776.136-.326.488-.73.836-.963.403-.269.934-.46 1.422-.512.187-.02.586-.02.773-.002zm-5.503-11a1.653 1.653 0 0 0-.683.298C5.617.74 5.173 1.666 4.985 2.819c-.07.436-.119 1.04-.119 1.503 0 .544.064 1.24.155 1.721.02.107.031.202.023.208a8.12 8.12 0 0 1-.187.152 5.324 5.324 0 0 0-.949 1.02 5.49 5.49 0 0 0-.94 2.339 6.625 6.625 0 0 0-.023 1.357c.091.78.325 1.438.727 2.04l.13.195-.037.064c-.269.452-.498 1.105-.605 1.732-.084.496-.095.629-.095 1.294 0 .67.009.803.088 1.266.095.555.288 1.143.503 1.534.071.128.243.393.264.407.007.003-.014.067-.046.141a7.405 7.405 0 0 0-.548 1.873c-.062.417-.071.552-.071.991 0 .56.031.832.148 1.279L3.42 24h1.478l-.05-.091c-.297-.552-.325-1.575-.068-2.597.117-.472.25-.819.498-1.296l.148-.29v-.177c0-.165-.003-.184-.057-.293a.915.915 0 0 0-.194-.25 1.74 1.74 0 0 1-.385-.543c-.424-.92-.506-2.286-.208-3.451.124-.486.329-.918.544-1.154a.787.787 0 0 0 .223-.531c0-.195-.07-.355-.224-.522a3.136 3.136 0 0 1-.817-1.729c-.14-.96.114-2.005.69-2.834.563-.814 1.353-1.336 2.237-1.475.199-.033.57-.028.776.01.226.04.367.028.512-.041.179-.085.268-.19.374-.431.093-.215.165-.333.36-.576.234-.29.46-.489.822-.729.413-.27.884-.467 1.352-.561.17-.035.25-.04.569-.04.319 0 .398.005.569.04a4.07 4.07 0 0 1 1.914.997c.117.109.398.457.488.602.034.057.095.177.132.267.105.241.195.346.374.43.14.068.286.082.503.045.343-.058.607-.053.943.016 1.144.23 2.14 1.173 2.581 2.437.385 1.108.276 2.267-.296 3.153-.097.15-.193.27-.333.419-.301.322-.301.722-.001 1.053.493.539.801 1.866.708 3.036-.062.772-.26 1.463-.533 1.854a2.096 2.096 0 0 1-.224.258.916.916 0 0 0-.194.25c-.054.109-.057.128-.057.293v.178l.148.29c.248.476.38.823.498 1.295.253 1.008.231 2.01-.059 2.581a.845.845 0 0 0-.044.098c0 .006.329.009.732.009h.73l.02-.074.036-.134c.019-.076.057-.3.088-.516.029-.217.029-1.016 0-1.258-.11-.875-.295-1.57-.597-2.226-.032-.074-.053-.138-.046-.141.008-.005.057-.074.108-.152.376-.569.607-1.284.724-2.228.031-.26.031-1.378 0-1.628-.083-.645-.182-1.082-.348-1.525a6.083 6.083 0 0 0-.329-.7l-.038-.064.131-.194c.402-.604.636-1.262.727-2.04a6.625 6.625 0 0 0-.024-1.358 5.512 5.512 0 0 0-.939-2.339 5.325 5.325 0 0 0-.95-1.02 8.097 8.097 0 0 1-.186-.152.692.692 0 0 1 .023-.208c.208-1.087.201-2.443-.017-3.503-.19-.924-.535-1.658-.98-2.082-.354-.338-.716-.482-1.15-.455-.996.059-1.8 1.205-2.116 3.01a6.805 6.805 0 0 0-.097.726c0 .036-.007.066-.015.066a.96.96 0 0 1-.149-.078A4.857 4.857 0 0 0 12 3.03c-.832 0-1.687.243-2.456.698a.958.958 0 0 1-.148.078c-.008 0-.015-.03-.015-.066a6.71 6.71 0 0 0-.097-.725C8.997 1.392 8.337.319 7.46.048a2.096 2.096 0 0 0-.585-.041Z"/></svg><span>Ollama</span></div>
+      <div class="ai-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.025 1.13c-5.77 0-10.449 4.647-10.449 10.378 0 1.112.178 2.181.503 3.185.064-.222.203-.444.416-.577a.96.96 0 0 1 .524-.15c.293 0 .584.124.84.284.278.173.48.408.71.694.226.282.458.611.684.951v-.014c.017-.324.106-.622.264-.874s.403-.487.762-.543c.3-.047.596.06.787.203s.31.313.4.467c.15.257.212.468.233.542.01.026.653 1.552 1.657 2.54.616.605 1.01 1.223 1.082 1.912.055.537-.096 1.059-.38 1.572.637.121 1.294.187 1.967.187.657 0 1.298-.063 1.921-.178-.287-.517-.44-1.041-.384-1.581.07-.69.465-1.307 1.081-1.913 1.004-.987 1.647-2.513 1.657-2.539.021-.074.083-.285.233-.542.09-.154.208-.323.4-.467a1.08 1.08 0 0 1 .787-.203c.359.056.604.29.762.543s.247.55.265.874v.015c.225-.34.457-.67.683-.952.23-.286.432-.52.71-.694.257-.16.547-.284.84-.285a.97.97 0 0 1 .524.151c.228.143.373.388.43.625l.006.04a10.3 10.3 0 0 0 .534-3.273c0-5.731-4.678-10.378-10.449-10.378M8.327 6.583a1.5 1.5 0 0 1 .713.174 1.487 1.487 0 0 1 .617 2.013c-.183.343-.762-.214-1.102-.094-.38.134-.532.914-.917.71a1.487 1.487 0 0 1 .69-2.803m7.486 0a1.487 1.487 0 0 1 .689 2.803c-.385.204-.536-.576-.916-.71-.34-.12-.92.437-1.103.094a1.487 1.487 0 0 1 .617-2.013 1.5 1.5 0 0 1 .713-.174m-10.68 1.55a.96.96 0 1 1 0 1.921.96.96 0 0 1 0-1.92m13.838 0a.96.96 0 1 1 0 1.92.96.96 0 0 1 0-1.92M8.489 11.458c.588.01 1.965 1.157 3.572 1.164 1.607-.007 2.984-1.155 3.572-1.164.196-.003.305.12.305.454 0 .886-.424 2.328-1.563 3.202-.22-.756-1.396-1.366-1.63-1.32q-.011.001-.02.006l-.044.026-.01.008-.03.024q-.018.017-.035.036l-.032.04a1 1 0 0 0-.058.09l-.014.025q-.049.088-.11.19a1 1 0 0 1-.083.116 1.2 1.2 0 0 1-.173.18q-.035.029-.075.058a1.3 1.3 0 0 1-.251-.243 1 1 0 0 1-.076-.107c-.124-.193-.177-.363-.337-.444-.034-.016-.104-.008-.2.022q-.094.03-.216.087-.06.028-.125.063l-.13.074q-.067.04-.136.086a3 3 0 0 0-.135.096 3 3 0 0 0-.26.219 2 2 0 0 0-.12.121 2 2 0 0 0-.106.128l-.002.002a2 2 0 0 0-.09.132l-.001.001a1.2 1.2 0 0 0-.105.212q-.013.036-.024.073c-1.139-.875-1.563-2.317-1.563-3.203 0-.334.109-.457.305-.454M9.325 21.812c.824-1.19.766-2.082-.365-3.194-1.13-1.112-1.789-2.738-1.789-2.738s-.246-.945-.806-.858-.97 1.499.202 2.362c1.173.864-.233 1.45-.685.64-.45-.812-1.683-2.896-2.322-3.295s-1.089-.175-.938.647 2.822 2.813 2.562 3.244-1.176-.506-1.176-.506-2.866-2.567-3.49-1.898.473 1.23 2.037 2.16c1.564.932 1.686 1.178 1.464 1.53s-3.675-2.511-4-1.297c-.323 1.214 3.524 1.567 3.287 2.405-.238.839-2.71-1.587-3.216-.642-.506.946 3.49 2.056 3.522 2.064 1.29.33 4.568 1.028 5.713-.624m5.349 0c-.824-1.19-.766-2.082.365-3.194 1.13-1.112 1.789-2.738 1.789-2.738s.246-.945.806-.858.97 1.499-.202 2.362c-1.173.864.233 1.45.685.64.451-.812 1.683-2.896 2.322-3.295s1.089-.175.938.647-2.822 2.813-2.562 3.244 1.176-.506 1.176-.506 2.866-2.567 3.49-1.898-.473 1.23-2.037 2.16c-1.564.932-1.686 1.178-1.464 1.53s3.675-2.511 4-1.297c.323 1.214-3.524 1.567-3.287 2.405.238.839 2.71-1.587 3.216-.642.506.946-3.49 2.056-3.522 2.064-1.29.33-4.568 1.028-5.713-.624"/></svg><span>Hugging Face</span></div>
+      <div class="ai-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.157 0A4.151 4.151 0 0 0 0 4.161v15.678A4.151 4.151 0 0 0 4.157 24h15.682A4.152 4.152 0 0 0 24 19.839V4.161A4.152 4.152 0 0 0 19.839 0H4.157Zm10.61 8.761h.03a.577.577 0 0 1 .23.038.585.585 0 0 1 .201.124.63.63 0 0 1 .162.431.612.612 0 0 1-.162.435.58.58 0 0 1-.201.128.58.58 0 0 1-.23.042.529.529 0 0 1-.235-.042.585.585 0 0 1-.332-.328.559.559 0 0 1-.038-.235.613.613 0 0 1 .17-.431.59.59 0 0 1 .405-.162Zm2.853 1.572c.03.004.061.004.095.004.325-.011.646.064.937.219.238.144.431.355.552.609.128.279.189.582.185.888v.193a2 2 0 0 1 0 .219h-2.498c.003.227.075.45.204.642a.78.78 0 0 0 .646.265.714.714 0 0 0 .484-.136.642.642 0 0 0 .23-.318l.915.257a1.398 1.398 0 0 1-.28.537c-.14.159-.321.284-.521.355a2.234 2.234 0 0 1-.836.136 1.923 1.923 0 0 1-1.001-.245 1.618 1.618 0 0 1-.665-.703 2.221 2.221 0 0 1-.227-1.036 1.95 1.95 0 0 1 .48-1.398 1.9 1.9 0 0 1 1.3-.488Zm-9.607.023c.162.004.325.026.48.079.207.065.4.174.563.314.26.302.393.692.366 1.088v2.276H8.53l-.109-.711h-.065c-.064.163-.155.31-.272.439a1.122 1.122 0 0 1-.374.264 1.023 1.023 0 0 1-.453.083 1.334 1.334 0 0 1-.866-.264.965.965 0 0 1-.329-.801.993.993 0 0 1 .076-.431 1.02 1.02 0 0 1 .242-.363 1.478 1.478 0 0 1 1.043-.303h.952v-.181a.696.696 0 0 0-.136-.454.553.553 0 0 0-.438-.154.695.695 0 0 0-.378.086.48.48 0 0 0-.193.254l-.99-.144a1.26 1.26 0 0 1 .257-.563c.14-.174.321-.302.533-.378.261-.091.54-.136.82-.129.053-.003.106-.007.163-.007Zm4.384.007c.174 0 .347.038.506.114.182.083.34.211.458.374.257.423.377.911.351 1.406a2.53 2.53 0 0 1-.355 1.448 1.148 1.148 0 0 1-1.009.517c-.204 0-.401-.045-.582-.136a1.052 1.052 0 0 1-.48-.457 1.298 1.298 0 0 1-.114-.234h-.045l.004 1.784h-1.059v-4.713h.904l.117.805h.057c.068-.208.177-.401.328-.56a1.129 1.129 0 0 1 .843-.344h.076v-.004Zm7.559.084h.903l.113.805h.053a1.37 1.37 0 0 1 .235-.484.813.813 0 0 1 .313-.242.82.82 0 0 1 .39-.076h.234v1.051h-.401a.662.662 0 0 0-.313.008.623.623 0 0 0-.272.155.663.663 0 0 0-.174.26.683.683 0 0 0-.027.314v1.875h-1.054v-3.666Zm-17.515.003h3.262v.896L3.73 13.104l.034.113h1.973l.042.9H2.4v-.9l1.931-1.754-.045-.117H2.441v-.896Zm11.815 0h1.055v3.659h-1.055V10.45Z"/></svg><span>Zapier</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PARTNERSHIP ===== -->
+<section class="partner">
+  <div class="wrap">
+    <div class="lead-row">
+      <div><span class="eyebrow">Partnership</span><h2 class="h2">開発者と、構築のプロ。<br>二人三脚で導入する。</h2></div>
+      <p class="deck">ツールの根幹を知る<span class="pmark">開発者</span>と、現場で数字を出してきた<span class="pmark">構築チーム</span>。両者が直接つながっているから、「テンプレを当てはめて終わり」にならない柔軟な構築と改善ができます。</p>
+    </div>
+    <div class="duo">
+      <div class="pcard">
+        <img src="assets/noda_github.png" alt="野田修一 氏">
+        <div>
+          <div class="role">Developer</div>
+          <h3>野田 修一 <span style="font-size:13px;font-weight:400">氏</span></h3>
+          <div class="sub">LINE Harness 開発者 / The Harness 主宰</div>
+          <p>オープンソースのLINE CRM「LINE Harness」を開発・公開。ツールの設計思想そのものを把握しているため、踏み込んだカスタマイズや最新機能への追従が可能です。</p>
+        </div>
+      </div>
+      <div class="pcard flip">
+        <img src="assets/profile.jpg" alt="西原 浩貴" style="object-position:50% 24%">
+        <div>
+          <div class="role">Construction</div>
+          <h3>西原 浩貴 <span style="font-size:13px;font-weight:400">氏</span></h3>
+          <div class="sub">株式会社プラチナ企画</div>
+          <p>広告運用・LP制作などマーケティング全般を手がけるマーケター。教育・温浴・自動車・リゾートなど多業種での実績をもとに、ファネル全体から逆算し、マーケ施策全体を踏まえた公式LINE構築が可能です。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHAT WE DO ===== -->
+<section>
+  <div class="wrap">
+    <div class="lead-row">
+      <div><span class="eyebrow">What we do</span><h2 class="h2">私たちが、<br>引き受ける3つのこと。</h2></div>
+      <p class="deck">「ツールを渡して終わり」ではありません。御社の目的に合わせて、設計から運用改善まで手を動かします。</p>
+    </div>
+    <div class="do-wrap">
+      <div class="do-row">
+        <div class="no serif">01</div>
+        <h3>御社専用に、<br>フルカスタマイズ</h3>
+        <p>オンラインで丁寧にヒアリングし、業種・目的に合わせて配信内容と導線を作り込みます。テンプレートの流用ではない、“御社のための”公式LINEを構築します。</p>
+      </div>
+      <div class="do-row">
+        <div class="no serif">02</div>
+        <h3>毎月の固定費を、<br>圧縮する</h3>
+        <p>L-stepなどで毎月かかっていた月額固定費が、運用次第で0円〜に。浮いたコストを、より成果に直結する施策へ回せます。</p>
+      </div>
+      <div class="do-row">
+        <div class="no serif">03</div>
+        <h3>AI（自然言語）で、<br>構築・改善する</h3>
+        <p>開発者直系の技術で、AIに話しかけるように設定・改善。施策のPDCAを速く回し、思いついた打ち手をすぐ形にできます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== RESULTS ===== -->
+<section class="results" id="results">
+  <div class="wrap">
+    <div class="lead-row">
+      <div><span class="eyebrow">Results</span><h2 class="h2">“集めて終わり”にしない。<br>数字で残してきた実績。</h2></div>
+      <p class="deck">友だちを集めることがゴールではありません。それぞれの現場で「売上・会員・予約」につながる成果を設計してきました。</p>
+    </div>
+
+    <div class="statline">
+      <div class="s"><div class="v"><span class="num" data-count="20">0</span><span>万人+</span></div><div class="c">某大手教育系スクール｜友だち登録数</div></div>
+      <div class="s"><div class="v"><span class="num" data-count="220">0</span><span>%超</span></div><div class="c">同｜2年間のLINE経由売上 成長</div></div>
+      <div class="s"><div class="v"><span class="num" data-count="90">0</span><span>%超</span></div><div class="c">龍城さうな｜登録者の会員化率</div></div>
+    </div>
+
+    <div class="cases">
+      <div class="case case--feature">
+        <span class="scale">全国規模</span>
+        <div class="tag">Education / Online School</div>
+        <h3>某大手教育系スクール</h3>
+        <div class="cat"><span class="dot"></span><b>オンライン教育</b>｜全国・大規模B2C｜※社名非公開</div>
+        <div class="kpis">
+          <div class="kpi"><div class="v"><span class="num" data-count="20">0</span>万人+</div><div class="l">友だち登録</div></div>
+          <div class="kpi"><div class="v"><span class="num" data-count="220">0</span>%超</div><div class="l">LINE経由売上（2年）</div></div>
+        </div>
+        <p>20万人規模を「一斉配信して終わり」にせず、検討度別のセグメント配信とシナリオ配信で申込・継続まで設計。お悩み相談の予約導線でファン化と成約を両立させ、<b style="color:#fff">2年でLINE経由売上を220%超</b>に伸ばしました。</p>
+        <div class="chips"><span>セグメント配信</span><span>リマインド配信</span><span>シナリオ配信</span><span>リターゲティング</span><span>予約導線</span></div>
+      </div>
+      <div class="case case--local">
+        <span class="scale">地域・店舗</span>
+        <div class="tag">Sauna / Local Store</div>
+        <h3>龍城さうな</h3>
+        <div class="cat"><span class="dot"></span><b>リアル店舗</b>｜地域・来店ビジネス｜増田氏</div>
+        <div class="figrow"><img src="assets/logos/tatsuki.jpg" alt="龍城さうな"></div>
+        <div class="kpis">
+          <div class="kpi"><div class="v"><span class="num" data-count="2">0</span>万人+</div><div class="l">友だち登録</div></div>
+          <div class="kpi"><div class="v"><span class="num" data-count="90">0</span>%超</div><div class="l">会員登録率</div></div>
+        </div>
+        <p>登録者の9割超を会員化する導線を構築。待ち時間が事前に分かる仕組みで来店体験を改善し、リピート来店につなげています。</p>
+        <div class="chips"><span>会員登録導線</span><span>待ち時間把握</span><span>リテンション</span></div>
+      </div>
+    </div>
+
+    <div class="oa">
+      <span class="ytic"><svg viewBox="0 0 24 24" fill="none"><path d="M9.5 8.2v7.6l6.2-3.8-6.2-3.8Z" fill="#fff"/></svg></span>
+      <div class="otxt">
+        <span class="pill">In the media — YouTube</span>
+        <h4>東海オンエア出演者が手がける店舗にも</h4>
+        <p>国内屈指の人気YouTuber「東海オンエア」。その出演者が運営する店舗の公式LINEも手がけています。</p>
+      </div>
+      <div class="stores">
+        <span>龍城さうな<small>増田氏</small></span>
+        <span>成田モータース<small>成田氏</small></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== LOGO BAR ===== -->
+<div class="logobar">
+  <div class="wrap">
+    <div class="label">Construction & Operation</div>
+    <div class="row">
+      <img class="lb" src="assets/logos/narita_white.svg" alt="成田モータース">
+      <img class="lb" src="assets/logos/uyama_w.png" alt="鵜山リゾート">
+      <img class="lb-sq" src="assets/logos/infinity.svg" alt="Infinity Free">
+      <span class="chip"><img src="assets/logos/wellfit.png" alt="パーソナルジム WELL-FIT"></span>
+      <span class="ck"><img src="assets/logos/tatsuki.jpg" alt="龍城さうな"><b>龍城さうな</b></span>
+      <span class="ck"><img src="assets/logos/hotta.png" alt="堀田湯" style="background:#fff;object-fit:contain;padding:2px"><b>堀田湯</b></span>
+      <span class="txt">某大手教育系スクール<small>※社名非公開</small></span>
     </div>
   </div>
 </div>
 
-<!-- ===== できること ===== -->
-<section class="block">
-  <div class="wrap center">
-    <span class="eyebrow">WHAT WE DO</span>
-    <h2 class="h2">私たちができる、3つのこと</h2>
-    <p class="sub">「ツールを渡して終わり」ではありません。<br class="brpc">御社の目的に合わせて、設計から運用まで一貫して伴走します。</p>
-  </div>
+<!-- ===== SOLVE ===== -->
+<section>
   <div class="wrap">
-    <div class="grid3">
-      <div class="vcard">
-        <div class="num">01</div>
-        <div class="ic">🧩</div>
-        <h3>自社専用にフルカスタマイズ</h3>
-        <p>オンラインで丁寧にヒアリングし、業種・目的に合わせて配信・導線を作り込み。テンプレ流用ではない"御社専用"の公式LINEを構築します。</p>
-      </div>
-      <div class="vcard">
-        <div class="num">02</div>
-        <div class="ic">💰</div>
-        <h3>月額コストを大幅圧縮</h3>
-        <p>L-stepで毎月かかっていた月額固定費が不要に。浮いたコストを、より成果につながる施策へ回せます。</p>
-      </div>
-      <div class="vcard">
-        <div class="num">03</div>
-        <div class="ic">🤖</div>
-        <h3>自然言語（AI）で構築</h3>
-        <p>開発者直系の技術で、AIに話しかけるように構築・改善。スピーディかつ柔軟に、施策のPDCAを高速で回せます。</p>
-      </div>
+    <div class="lead-row">
+      <div><span class="eyebrow">What we solve</span><h2 class="h2">公式LINEを、<br>“資産”に変える。</h2></div>
+      <p class="deck">コストセンターになりがちな公式LINEを、売上を生む資産へ。御社の課題に合わせて、解決の打ち手を設計します。</p>
     </div>
-  </div>
-</section>
-
-<!-- ===== 実績 ===== -->
-<section class="block results" id="results">
-  <div class="wrap center">
-    <span class="eyebrow">RESULTS</span>
-    <h2 class="h2">数字で証明する、構築実績</h2>
-    <p class="sub">それぞれの企業で、"集めて終わり"ではなく<br class="brpc">「売上・会員」につながる成果を出してきました。</p>
-  </div>
-  <div class="wrap">
-    <!-- deep cases -->
-    <div class="case-grid">
-      <div class="case">
-        <div class="top"><span class="caseicon">🎓</span><span class="tag">教育・オンラインスクール</span><h3>某大手教育系スクール</h3></div>
-        <div class="body">
-          <div class="kpis">
-            <div class="kpi"><div class="v">20万人+</div><div class="l">友だち登録</div></div>
-            <div class="kpi"><div class="v">220%超</div><div class="l">LINE経由売上（2年）</div></div>
-          </div>
-          <p style="color:var(--muted);font-size:14.5px;margin-bottom:14px">20万人規模を「配信して終わり」にせず、検討度別のセグメント×シナリオで申込・継続まで設計。お悩み相談の予約導線でファン化と成約を両立。</p>
-          <ul>
-            <li>セグメント配信</li><li>リマインド配信</li><li>シナリオ配信</li><li>リターゲティング</li><li>お悩み相談（予約導線）</li>
-          </ul>
-        </div>
-      </div>
-      <div class="case">
-        <div class="top"><img class="caselogo" src="assets/logos/tatsuki.jpg" alt="龍城さうな"><span class="tag green">サウナ・温浴施設</span><h3>龍城さうな</h3></div>
-        <div class="body">
-          <div class="kpis">
-            <div class="kpi"><div class="v">2万人+</div><div class="l">友だち登録</div></div>
-            <div class="kpi"><div class="v">90%超</div><div class="l">会員登録率</div></div>
-            <div class="kpi"><div class="v">満足度UP</div><div class="l">待ち時間把握</div></div>
-          </div>
-          <p style="color:var(--muted);font-size:14.5px;margin-bottom:14px">登録者の9割超を会員化する導線を実現。待ち時間が事前に分かる仕組みで来店体験を改善し、顧客満足度を大きく向上させました。</p>
-          <ul>
-            <li>会員登録導線</li><li>待ち時間把握システム</li><li>リテンション配信</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- 東海オンエア -->
-    <div class="oa">
-      <span class="pill">話題性</span>
-      <div>
-        <h4>東海オンエア出演者が手がける店舗も導入</h4>
-        <p>YouTube・メディアで話題の店舗にも選ばれています。</p>
-      </div>
-      <div class="stores">
-        <span>龍城サウナ（増田氏）</span>
-        <span>成田モータース（成田氏）</span>
-      </div>
-    </div>
-
-    <!-- その他 -->
-    <div class="others">
-      <div class="o">Infinity Free<small>外食・美容 無料サービス</small></div>
-      <div class="o">堀田湯<small>銭湯・温浴</small></div>
-      <div class="o">成田モータース<small>自動車販売・整備</small></div>
-      <div class="o">鵜山リゾート<small>リゾート・宿泊</small></div>
-      <span class="more">＋ 飲食・美容・士業・EC など多数の業種</span>
-    </div>
-  </div>
-</section>
-
-<!-- ===== 解決できること ===== -->
-<section class="block">
-  <div class="wrap center">
-    <span class="eyebrow">WHAT WE SOLVE</span>
-    <h2 class="h2">私たちが解決できること</h2>
-    <p class="sub">公式LINEを"コストセンター"から"売上を生む資産"へ。<br class="brpc">御社の課題に合わせて成果を設計します。</p>
-  </div>
-  <div class="wrap">
     <div class="solve-grid">
-      <div class="scard"><div class="e">📈</div><h4>売上アップ</h4><p>配信・導線の最適化で、LINE経由の売上を伸ばす。</p></div>
-      <div class="scard"><div class="e">📅</div><h4>予約率の向上</h4><p>予約までの導線を整理し、取りこぼしを防ぐ。</p></div>
-      <div class="scard"><div class="e">🎯</div><h4>CVR改善</h4><p>セグメント×シナリオで一人ひとりに最適な訴求を。</p></div>
-      <div class="scard"><div class="e">✂️</div><h4>コスト削減</h4><p>毎月の月額固定費を圧縮し、利益体質に。</p></div>
+      <div class="scell"><div class="no serif">i.</div><h4>売上アップ</h4><p>配信内容と導線を最適化し、LINE経由の売上を伸ばします。</p></div>
+      <div class="scell"><div class="no serif">ii.</div><h4>予約率の向上</h4><p>予約までの導線を整理し、検討中の取りこぼしを防ぎます。</p></div>
+      <div class="scell"><div class="no serif">iii.</div><h4>CVR改善</h4><p>セグメント×シナリオで、一人ひとりに最適な訴求を届けます。</p></div>
+      <div class="scell"><div class="no serif">iv.</div><h4>コスト削減</h4><p>毎月の月額固定費を圧縮し、利益の残る運用体制へ。</p></div>
     </div>
   </div>
 </section>
 
-<!-- ===== 選ばれる理由 / 比較 ===== -->
-<section class="block results">
-  <div class="wrap center">
-    <span class="eyebrow">WHY LINE HARNESS</span>
-    <h2 class="h2">L-stepとの違い</h2>
-    <p class="sub">機能は同等。<br class="brpc">コスト・構築方法・カスタマイズ性で、LINE Harnessが選ばれています。</p>
-  </div>
+<!-- ===== COMPARISON ===== -->
+<section class="results">
   <div class="wrap">
+    <div class="lead-row">
+      <div><span class="eyebrow">Harness vs L-step</span><h2 class="h2">機能は同等。<br>違うのは、その先。</h2></div>
+      <p class="deck">配信・タグ・ステップといった主要機能はL-stepと同等にカバー。差が出るのは、コスト・構築方法・作り込みの自由度です。</p>
+    </div>
     <div class="cmp">
       <table>
         <thead>
-          <tr><th>項目</th><th class="us">LINE Harness</th><th>L-step</th></tr>
+          <tr><th>比較項目</th><th class="us">LINE Harness（当社構築）</th><th>L-step</th></tr>
         </thead>
         <tbody>
-          <tr><td>月額固定費</td><td class="us">0円〜（サーバー実費のみ）</td><td>月額 数万円〜</td></tr>
-          <tr><td>構築方法</td><td class="us">AI・自然言語で構築</td><td>手動GUI操作</td></tr>
-          <tr><td>カスタマイズ</td><td class="us">自社専用に作り込み・伴走</td><td>テンプレ中心</td></tr>
-          <tr><td>主要機能（セグメント/シナリオ/ステップ）</td><td class="us">同等にカバー</td><td>あり</td></tr>
-          <tr><td>AI活用</td><td class="us">◎ 開発者直系</td><td><span class="x">×</span></td></tr>
+          <tr><td>ツール月額固定費</td><td class="us">0円〜（サーバー実費のみ）</td><td>月額 数万円〜</td></tr>
+          <tr><td>構築方法</td><td class="us">AI・自然言語で構築</td><td>手動のGUI操作</td></tr>
+          <tr><td>カスタマイズ</td><td class="us">御社専用に作り込み・伴走</td><td>テンプレート中心</td></tr>
+          <tr><td>主要機能（セグメント／シナリオ／ステップ）</td><td class="us">同等にカバー</td><td>あり</td></tr>
+          <tr><td>AI活用</td><td class="us">開発者直系で対応</td><td><span class="x">非対応</span></td></tr>
         </tbody>
       </table>
+      <p class="cmpnote">※ L-stepなどで毎月かかっていた<b>ツールの月額固定費が0円〜</b>になります。別途、弊社の構築・運用サポート費用を承ります（内容に応じてお見積り）。</p>
     </div>
   </div>
 </section>
 
-<!-- ===== 導入の流れ ===== -->
-<section class="block">
-  <div class="wrap center">
-    <span class="eyebrow">FLOW</span>
-    <h2 class="h2">導入の流れ</h2>
-    <p class="sub">オンラインのヒアリングから運用まで、一貫してサポートします。</p>
-  </div>
+<!-- ===== FLOW ===== -->
+<section>
   <div class="wrap">
-    <div class="steps">
-      <div class="step"><h4>オンラインヒアリング</h4><p>御社の業種・目的・現状の課題を丁寧にお伺いします。</p></div>
-      <div class="step"><h4>設計・ご提案</h4><p>目的に合わせた配信・導線の設計をご提案します。</p></div>
-      <div class="step"><h4>構築</h4><p>AI（自然言語）で御社専用の公式LINEを構築します。</p></div>
-      <div class="step"><h4>運用・伴走</h4><p>効果を見ながら改善。成果が出るまで伴走します。</p></div>
+    <div class="lead-row">
+      <div><span class="eyebrow">Flow</span><h2 class="h2">導入までの、<br>4ステップ。</h2></div>
+      <p class="deck">オンラインのヒアリングから運用改善まで、一貫してサポートします。まずは話を聞くところから。</p>
+    </div>
+    <div class="flow">
+      <div class="fstep"><div class="no">Step 01</div><div><h4>オンラインヒアリング</h4><p>御社の業種・目的・現状の課題を、オンラインで丁寧にお伺いします。</p></div></div>
+      <div class="fstep"><div class="no">Step 02</div><div><h4>設計・ご提案</h4><p>目的から逆算した配信・導線の設計を、具体的にご提案します。</p></div></div>
+      <div class="fstep"><div class="no">Step 03</div><div><h4>構築</h4><p>AI（自然言語）を活用し、御社専用の公式LINEを構築します。</p></div></div>
+      <div class="fstep"><div class="no">Step 04</div><div><h4>運用・伴走</h4><p>数字を見ながら改善を継続。成果が出るまで二人三脚で伴走します。</p></div></div>
     </div>
   </div>
 </section>
 
-<!-- ===== 信頼性 / 提携 ===== -->
-<section class="block partner">
-  <div class="wrap center">
-    <span class="eyebrow">PARTNERSHIP</span>
-    <h2 class="h2">開発者 × 構築のプロ、二人三脚で。</h2>
-    <p class="sub" style="color:#bcccea">ツールの開発者と、現場で成果を出してきた構築チーム。<br class="brpc">両者の連携だから実現できる導入支援です。</p>
-  </div>
+<!-- ===== CONTACT ===== -->
+<section class="contact" id="contact">
   <div class="wrap">
-    <div class="pcols">
-      <div class="pcol">
-        <div class="role">DEVELOPER</div>
-        <h3>野田 修一 氏</h3>
-        <p>LINE Harness 開発者。ツールの根幹を知る開発者直系の技術力で、柔軟な構築・改善を支えます。</p>
+    <div class="grid">
+      <div>
+        <span class="eyebrow">Contact</span>
+        <h2>まずは、<br>話を聞くところから。</h2>
+        <p class="deck">「自社の場合どうなる？」という段階で構いません。内容を確認のうえ、担当より折り返しご連絡します。</p>
+        <ul class="assure">
+          <li>2営業日以内に担当よりご連絡</li>
+          <li>ご記入内容は本件のご連絡以外に使用しません</li>
+        </ul>
       </div>
-      <div class="pcross">×</div>
-      <div class="pcol">
-        <div class="role">CONSTRUCTION</div>
-        <h3>株式会社プラチナ企画</h3>
-        <p>教育・温浴・自動車・リゾートなど多業種で構築・運用してきた実績。成果から逆算した設計で伴走します。</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== お問い合わせ ===== -->
-<section class="block contact" id="contact">
-  <div class="wrap center">
-    <span class="eyebrow" style="color:#fff">CONTACT</span>
-    <h2 class="h2">まずは、お気軽にご相談ください</h2>
-    <p class="sub">下記フォームよりお問い合わせください。<br class="brpc">内容を確認のうえ、担当より折り返しご連絡します。</p>
-    <div class="formbox">
-      <form id="contactForm" class="cform" action="https://docs.google.com/forms/d/e/1FAIpQLSefdwyMM_5ykTXep9zgK_acw0QRjSIvu5WvS9NrCpywbhmmAQ/formResponse" method="POST" target="gform_target">
-        <div class="field">
-          <label class="lb">会社名<span class="req">必須</span></label>
-          <input type="text" name="entry.1916873406" required placeholder="株式会社〇〇">
-        </div>
-        <div class="field">
-          <label class="lb">お名前<span class="req">必須</span></label>
-          <input type="text" name="entry.645572986" required placeholder="山田 太郎">
-        </div>
-        <div class="field">
-          <label class="lb">メールアドレス<span class="req">必須</span></label>
-          <input type="email" name="entry.507717084" required placeholder="you@example.com">
-        </div>
-        <div class="field">
-          <label class="lb">現在のLINE活用状況<span class="req">必須</span></label>
-          <div class="radios">
-            <label class="radio"><input type="radio" name="entry.2054158396" value="まだ使用していない" required><span>まだ使用していない</span></label>
-            <label class="radio"><input type="radio" name="entry.2054158396" value="公式LINEのみを使用中"><span>公式LINEのみを使用中</span></label>
-            <label class="radio"><input type="radio" name="entry.2054158396" value="LINE CRMツールを導入している"><span>LINE CRMツールを導入している</span></label>
+      <div class="formbox">
+        <form id="contactForm" class="cform" action="https://docs.google.com/forms/d/e/1FAIpQLSefdwyMM_5ykTXep9zgK_acw0QRjSIvu5WvS9NrCpywbhmmAQ/formResponse" method="POST" target="gform_target">
+          <div class="field">
+            <label class="lb">会社名<span class="req">必須</span></label>
+            <input type="text" name="entry.1916873406" required placeholder="株式会社〇〇">
           </div>
+          <div class="field">
+            <label class="lb">お名前<span class="req">必須</span></label>
+            <input type="text" name="entry.645572986" required placeholder="山田 太郎">
+          </div>
+          <div class="field">
+            <label class="lb">メールアドレス<span class="req">必須</span></label>
+            <input type="email" name="entry.507717084" required placeholder="you@example.com">
+          </div>
+          <div class="field">
+            <label class="lb">現在のLINE活用状況<span class="req">必須</span></label>
+            <div class="radios">
+              <label class="radio"><input type="radio" name="entry.2054158396" value="まだ使用していない" required><span>まだ使用していない</span></label>
+              <label class="radio"><input type="radio" name="entry.2054158396" value="公式LINEのみを使用中"><span>公式LINEのみを使用中</span></label>
+              <label class="radio"><input type="radio" name="entry.2054158396" value="LINE CRMツールを導入している"><span>LINE CRMツールを導入している</span></label>
+            </div>
+          </div>
+          <div class="field">
+            <label class="lb">ご相談内容<span class="opt">任意</span></label>
+            <textarea name="entry.696021270" placeholder="ご相談・ご質問をご記入ください"></textarea>
+          </div>
+          <input type="hidden" name="fvv" value="1">
+          <input type="hidden" name="pageHistory" value="0">
+          <button type="submit" class="submitbtn">この内容で相談する</button>
+        </form>
+        <div id="formThanks" class="form-thanks" style="display:none">
+          <div class="ic">✓</div>
+          <h3>送信ありがとうございました</h3>
+          <p>内容を確認のうえ、担当より2営業日以内にご連絡いたします。</p>
         </div>
-        <div class="field">
-          <label class="lb">ご相談内容<span class="opt">任意</span></label>
-          <textarea name="entry.696021270" placeholder="ご相談・ご質問をご記入ください"></textarea>
-        </div>
-        <input type="hidden" name="fvv" value="1">
-        <input type="hidden" name="pageHistory" value="0">
-        <button type="submit" class="submitbtn">送信する</button>
-      </form>
-      <div id="formThanks" class="form-thanks" style="display:none">
-        <div class="ic">✓</div>
-        <h3>送信ありがとうございました</h3>
-        <p>内容を確認のうえ、担当より2営業日以内にご連絡いたします。</p>
+        <iframe name="gform_target" style="display:none" title="form-target"></iframe>
       </div>
-      <iframe name="gform_target" style="display:none" title="form-target"></iframe>
     </div>
-    <p class="note">ご記入内容は、本件のご連絡以外の目的には使用いたしません。</p>
-    <script>
-      (function(){
-        var f=document.getElementById('contactForm');
-        var ifr=document.getElementsByName('gform_target')[0];
-        var submitted=false;
-        f.addEventListener('submit',function(){submitted=true;});
-        ifr.addEventListener('load',function(){
-          if(submitted){
-            f.style.display='none';
-            document.getElementById('formThanks').style.display='block';
-          }
-        });
-      })();
-    </script>
   </div>
 </section>
 
 <!-- ===== FOOTER ===== -->
 <footer>
-  <div class="wrap">
-    <div class="logo"><span>株式会社プラチナ企画<small>LINE Harness 構築・導入支援</small></span></div>
-    <p>© 2026 株式会社プラチナ企画. All rights reserved.</p>
+  <div class="wrap row">
+    <div class="brand"><b>株式会社プラチナ企画</b><small>LINE Harness Construction</small></div>
   </div>
 </footer>
 
-<!-- sticky mobile cta -->
 <div class="mcta"><a href="#contact">無料で相談する</a></div>
+
+<script>
+  // seamless marquee: duplicate track contents so the -50% loop is gapless
+  document.querySelectorAll('.track').forEach(function(t){t.innerHTML+=t.innerHTML;});
+
+  // count-up: 強調数値を 0 → 目標値へアニメーション（画面に入った時に1回）
+  (function(){
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var nums = document.querySelectorAll('.num[data-count]');
+    function run(el){
+      var target = parseFloat(el.getAttribute('data-count')) || 0;
+      if(reduce){ el.textContent = target; return; }
+      var dur = 1500, t0 = null;
+      function step(ts){
+        if(!t0) t0 = ts;
+        var p = Math.min((ts - t0) / dur, 1);
+        var eased = 1 - Math.pow(1 - p, 3); // easeOutCubic
+        el.textContent = Math.round(eased * target);
+        if(p < 1) requestAnimationFrame(step); else el.textContent = target;
+      }
+      requestAnimationFrame(step);
+    }
+    if(!('IntersectionObserver' in window)){ nums.forEach(run); return; }
+    var seen = new WeakSet();
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting && !seen.has(e.target)){ seen.add(e.target); run(e.target); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.6 });
+    nums.forEach(function(el){ io.observe(el); });
+  })();
+  (function(){
+    var f=document.getElementById('contactForm');
+    var ifr=document.getElementsByName('gform_target')[0];
+    var submitted=false;
+    f.addEventListener('submit',function(){submitted=true;});
+    ifr.addEventListener('load',function(){
+      if(submitted){
+        f.style.display='none';
+        document.getElementById('formThanks').style.display='block';
+      }
+    });
+  })();
+</script>
 
 </body>
 </html>
