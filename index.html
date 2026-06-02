@@ -265,6 +265,24 @@
   tbody tr:last-child td{border-bottom:1px solid var(--line-d)}
   .cmpnote{margin-top:18px;font-size:12.5px;color:var(--muted);line-height:1.8}
   .cmpnote b{color:var(--ink-soft);font-weight:700}
+  /* スマホ：テーブルを縦積みカードに変換（横スクロール解消） */
+  @media(max-width:680px){
+    .cmp{margin-top:34px;overflow-x:visible}
+    table{min-width:0;width:100%;display:block}
+    thead{display:none}
+    tbody{display:block}
+    tbody tr{display:block;border:1px solid var(--line-d);margin-bottom:14px;background:var(--paper)}
+    tbody tr:last-child{margin-bottom:0}
+    th,td{display:block;padding:0;border-bottom:none}
+    /* 比較項目＝カード見出し */
+    tbody td:first-child{font-family:"Shippori Mincho",serif;font-size:14.5px;padding:13px 16px;background:var(--paper2);border-bottom:1px solid var(--line-d);color:var(--ink)}
+    /* 値の行：ラベル＋内容 */
+    tbody td:not(:first-child){display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:11px 16px;font-size:14.5px}
+    tbody td:not(:first-child)::before{content:attr(data-label);flex:none;font-size:12.5px;font-weight:700;color:var(--muted);font-family:"Shippori Mincho",serif}
+    tbody td.us{background:rgba(43,168,74,.07);border-bottom:1px solid var(--line);font-size:14.5px}
+    tbody td.us::before{color:var(--green)}
+    tbody tr:last-child td:not(:first-child){border-bottom:none}
+  }
 
   /* ---------- flow ---------- */
   .flow{margin-top:48px;display:grid;gap:0}
@@ -708,11 +726,11 @@
           <tr><th>比較項目</th><th class="us">LINE Harness（当社構築）</th><th>L-step</th></tr>
         </thead>
         <tbody>
-          <tr><td>ツール月額固定費</td><td class="us">0円〜（サーバー実費のみ）</td><td>月額 数万円〜</td></tr>
-          <tr><td>構築方法</td><td class="us">AI・自然言語で構築</td><td>手動のGUI操作</td></tr>
-          <tr><td>カスタマイズ</td><td class="us">御社専用に作り込み・伴走</td><td>テンプレート中心</td></tr>
-          <tr><td>主要機能（セグメント／シナリオ／ステップ）</td><td class="us">同等にカバー</td><td>あり</td></tr>
-          <tr><td>AI活用</td><td class="us">開発者直系で対応</td><td><span class="x">非対応</span></td></tr>
+          <tr><td data-label="比較項目">ツール月額固定費</td><td class="us" data-label="LINE Harness（当社）">0円〜（サーバー実費のみ）</td><td data-label="L-step">月額 数万円〜</td></tr>
+          <tr><td data-label="比較項目">構築方法</td><td class="us" data-label="LINE Harness（当社）">AI・自然言語で構築</td><td data-label="L-step">手動のGUI操作</td></tr>
+          <tr><td data-label="比較項目">カスタマイズ</td><td class="us" data-label="LINE Harness（当社）">御社専用に作り込み・伴走</td><td data-label="L-step">テンプレート中心</td></tr>
+          <tr><td data-label="比較項目">主要機能（セグメント／シナリオ／ステップ）</td><td class="us" data-label="LINE Harness（当社）">同等にカバー</td><td data-label="L-step">あり</td></tr>
+          <tr><td data-label="比較項目">AI活用</td><td class="us" data-label="LINE Harness（当社）">開発者直系で対応</td><td data-label="L-step"><span class="x">非対応</span></td></tr>
         </tbody>
       </table>
       <p class="cmpnote">※ L-stepなどで毎月かかっていた<b>ツールの月額固定費が0円〜</b>になります。別途、弊社の構築・運用サポート費用を承ります（内容に応じてお見積り）。</p>
