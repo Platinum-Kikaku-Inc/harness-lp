@@ -205,6 +205,10 @@
   .case--local::before{content:"";position:absolute;left:0;top:0;width:4px;height:100%;background:var(--line-d)}
   .case--local .figrow img{width:46px;height:46px;border-radius:50%}
   .case--local .scale{position:absolute;right:28px;top:30px;font-family:"Fraunces",serif;font-style:italic;font-size:12px;letter-spacing:.06em;color:var(--muted);border:1px solid var(--line-d);padding:3px 11px;border-radius:20px}
+  /* モバイル：スケールピルを通常フローに戻し、タグとの重なりを解消 */
+  @media(max-width:820px){
+    .case--feature .scale,.case--local .scale{position:static;top:auto;right:auto;display:inline-block;margin-bottom:14px}
+  }
 
   .oa{margin-top:32px;border:1px solid var(--green);padding:30px 34px;display:flex;align-items:center;gap:24px;flex-wrap:wrap;background:var(--green);color:var(--paper);position:relative;overflow:hidden}
   .oa::after{content:"";position:absolute;right:-40px;top:-40px;width:180px;height:180px;border:1px solid rgba(255,255,255,.08);border-radius:50%}
