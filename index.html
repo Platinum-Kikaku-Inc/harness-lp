@@ -130,7 +130,7 @@
   .ec p{font-size:15px;color:var(--ink-soft);line-height:1.95}
   .ec .tagrow{margin-top:22px;display:flex;flex-wrap:wrap;gap:7px}
   .ec .tagrow span{font-size:12.5px;color:var(--green);border:1px solid var(--line-d);padding:5px 12px}
-  @media(max-width:680px){.ec{padding:30px 22px 34px}.ec h3{font-size:22px;word-break:normal;overflow-wrap:anywhere;line-height:1.5}.ec p{font-size:14px;line-height:1.9;overflow-wrap:break-word}.ec .tagrow span{font-size:12px;padding:5px 10px}}
+  @media(max-width:680px){.ec{padding:30px 22px 34px}.ec h3{font-size:clamp(18px,5.4vw,22px);white-space:nowrap;word-break:keep-all;overflow-wrap:normal;line-height:1.5}.ec p{font-size:14px;line-height:1.9;overflow-wrap:break-word}.ec .tagrow span{font-size:12px;padding:5px 10px}}
 
   /* ---------- section base ---------- */
   section{padding:96px 0}
@@ -138,6 +138,7 @@
   @media(max-width:780px){.lead-row{grid-template-columns:1fr;gap:14px;align-items:start}}
   .h2{font-family:"Shippori Mincho",serif;font-weight:800;font-size:clamp(24px,3.15vw,36px);line-height:1.5;color:var(--green);letter-spacing:.01em;word-break:keep-all;text-wrap:pretty}
   @media(max-width:680px){.h2{word-break:normal;overflow-wrap:anywhere;line-height:1.5}}
+  @media(max-width:680px){.h2.nw{white-space:nowrap;word-break:keep-all;overflow-wrap:normal;font-size:clamp(19px,5.7vw,26px)}}
   .deck{color:var(--ink-soft);font-size:15.5px;line-height:1.95;max-width:520px}
 
   /* ---------- partnership ---------- */
@@ -272,23 +273,18 @@
   tbody tr:last-child td{border-bottom:1px solid var(--line-d)}
   .cmpnote{margin-top:18px;font-size:12.5px;color:var(--muted);line-height:1.8}
   .cmpnote b{color:var(--ink-soft);font-weight:700}
-  /* スマホ：テーブルを縦積みカードに変換（横スクロール解消） */
+  /* スマホ：3列の比較表をそのまま圧縮して表示（横スクロールなし） */
   @media(max-width:680px){
-    .cmp{margin-top:34px;overflow-x:visible}
-    table{min-width:0;width:100%;display:block}
-    thead{display:none}
-    tbody{display:block}
-    tbody tr{display:block;border:1px solid var(--line-d);margin-bottom:14px;background:var(--paper)}
-    tbody tr:last-child{margin-bottom:0}
-    th,td{display:block;padding:0;border-bottom:none}
-    /* 比較項目＝カード見出し */
-    tbody td:first-child{font-family:"Shippori Mincho",serif;font-size:14.5px;padding:13px 16px;background:var(--paper2);border-bottom:1px solid var(--line-d);color:var(--ink)}
-    /* 値の行：ラベルを上・内容を下に左揃えスタック（値の右端バラつきを解消） */
-    tbody td:not(:first-child){display:block;padding:12px 16px;font-size:15px;color:var(--ink-soft)}
-    tbody td:not(:first-child)::before{content:attr(data-label);display:block;font-size:11.5px;font-weight:700;color:var(--muted);font-family:"Shippori Mincho",serif;letter-spacing:.04em;margin-bottom:4px}
-    tbody td.us{background:rgba(43,168,74,.07);border-bottom:1px solid var(--line);font-size:15.5px;font-weight:700;color:var(--green)}
-    tbody td.us::before{color:var(--green)}
-    tbody tr:last-child td:not(:first-child){border-bottom:none}
+    .cmp{margin-top:32px;overflow-x:visible}
+    table{min-width:0;width:100%;table-layout:fixed}
+    th,td{padding:10px 7px;font-size:12px;line-height:1.5;vertical-align:top;word-break:normal;overflow-wrap:anywhere}
+    thead th{font-size:11px;font-weight:700;line-height:1.4}
+    thead th:first-child{width:33%}
+    thead th.us{width:37%;font-size:11.5px}
+    thead th:last-child{width:30%}
+    tbody td:first-child{font-size:11.5px}
+    td.us{font-size:12px}
+    .cmpnote{font-size:11px;margin-top:14px;line-height:1.75}
   }
 
   /* ---------- flow ---------- */
@@ -725,7 +721,7 @@
 <section class="results">
   <div class="wrap">
     <div class="lead-row">
-      <div><span class="eyebrow">Harness vs L-step</span><h2 class="h2">機能は同等。<br>違うのは、その先。</h2></div>
+      <div><span class="eyebrow">Harness vs L-step</span><h2 class="h2 nw">機能は同等。違うのは、その先。</h2></div>
       <p class="deck">配信・タグ・ステップといった主要機能はL-stepと同等にカバー。差が出るのは、コスト・構築方法・作り込みの自由度です。</p>
     </div>
     <div class="cmp">
@@ -750,7 +746,7 @@
 <section>
   <div class="wrap">
     <div class="lead-row">
-      <div><span class="eyebrow">Flow</span><h2 class="h2">導入までの、<br>4ステップ。</h2></div>
+      <div><span class="eyebrow">Flow</span><h2 class="h2 nw">導入までの、4ステップ。</h2></div>
       <p class="deck">オンラインのヒアリングから運用改善まで、一貫してサポートします。まずは話を聞くところから。</p>
     </div>
     <div class="flow">
